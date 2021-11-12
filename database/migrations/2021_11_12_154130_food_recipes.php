@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class MealPlan extends Migration
+class FoodRecipes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class MealPlan extends Migration
      */
     public function up()
     {
-        Schema::create('meal_plan', function (Blueprint $table) {
+        Schema::create('food_recipes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug');
             $table->string('photo');
-            $table->string('poster');
+            $table->string('poster');            
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class MealPlan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meal_plan');
+        Schema::dropIfExists('food_recipes');
     }
 }

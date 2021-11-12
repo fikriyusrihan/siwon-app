@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Workout;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // User Factory
+        \App\Models\User::factory(1)->admin()->create();
+        \App\Models\User::factory(4)->create();
+
+        // Workout Category Seeder
+        \App\Models\WorkoutCategory::create([
+            'title' => 'Easy',
+        ]);
+        \App\Models\WorkoutCategory::create([
+            'title' => 'Medium',
+        ]);
+        \App\Models\WorkoutCategory::create([
+            'title' => 'Hard',
+        ]);
+
+        // Program Category Seeder
+        \App\Models\ProgramCategory::create([
+            'title' => 'Beginner',
+        ]);
+        \App\Models\ProgramCategory::create([
+            'title' => 'Intermediate',
+        ]);
+        \App\Models\ProgramCategory::create([
+            'title' => 'Advanced',
+        ]);
     }
 }

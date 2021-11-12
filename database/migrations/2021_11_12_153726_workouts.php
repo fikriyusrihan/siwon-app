@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class WorkoutCategory extends Migration
+class Workouts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class WorkoutCategory extends Migration
      */
     public function up()
     {
-        Schema::create('workout_category', function (Blueprint $table) {
+        Schema::create('workouts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->foreignId('category_id');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('photo');
+            $table->string('poster');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class WorkoutCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workout_category');
+        Schema::dropIfExists('workouts');
     }
 }
