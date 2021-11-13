@@ -35,16 +35,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/programs/programs-1.png');
-                            ">
+                                                      background-image: url('assets/images/programs/programs-1.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Daily Routine Excercise</h4>
                             </div>
                         </div>
                         <div class="programs-card py-5 rounded" style="
-                              background-image: url('assets/images/programs/programs-2.png');
-                            ">
+                                                      background-image: url('assets/images/programs/programs-2.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Intense Fat Burning</h4>
@@ -53,16 +53,16 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/programs/programs-3.png');
-                            ">
+                                                      background-image: url('assets/images/programs/programs-3.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Beginner Workout Excercise</h4>
                             </div>
                         </div>
                         <div class="programs-card p-5 rounded" style="
-                              background-image: url('assets/images/programs/programs-4.png');
-                            ">
+                                                      background-image: url('assets/images/programs/programs-4.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">7 Days of Cardio</h4>
@@ -86,16 +86,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/workout/workout-1.png');
-                            ">
+                                                      background-image: url('assets/images/workout/workout-1.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Fat Burning Workout</h4>
                             </div>
                         </div>
                         <div class="programs-card py-5 rounded" style="
-                              background-image: url('assets/images/workout/workout-2.png');
-                            ">
+                                                      background-image: url('assets/images/workout/workout-2.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Simple Workout for Arm</h4>
@@ -104,16 +104,16 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/workout/workout-3.png');
-                            ">
+                                                      background-image: url('assets/images/workout/workout-3.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">9 Minutes Workout</h4>
                             </div>
                         </div>
                         <div class="programs-card p-5 rounded" style="
-                              background-image: url('assets/images/workout/workout-4.png');
-                            ">
+                                                      background-image: url('assets/images/workout/workout-4.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Intense Workout for Thighs and Hips</h4>
@@ -136,16 +136,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/healthy_foods/foods-1.png');
-                            ">
+                                                      background-image: url('assets/images/healthy_foods/foods-1.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Salmon Steak</h4>
                             </div>
                         </div>
                         <div class="programs-card py-5 rounded" style="
-                              background-image: url('assets/images/healthy_foods/foods-2.png');
-                            ">
+                                                      background-image: url('assets/images/healthy_foods/foods-2.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Heavenly Beans</h4>
@@ -154,16 +154,16 @@
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
                         <div class="programs-card p-5 mb-3 rounded" style="
-                              background-image: url('assets/images/healthy_foods/foods-3.png');
-                            ">
+                                                      background-image: url('assets/images/healthy_foods/foods-3.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Avocado Toast</h4>
                             </div>
                         </div>
                         <div class="programs-card p-5 rounded" style="
-                              background-image: url('assets/images/healthy_foods/foods-4.png');
-                            ">
+                                                      background-image: url('assets/images/healthy_foods/foods-4.png');
+                                                    ">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Berries Smoothie</h4>
@@ -182,20 +182,50 @@
                     Masukan dan saran anda akan sangat membantu kami untuk mengembangkan
                     SiWON menjadi lebih baik
                 </p>
+                @if (session()->has('home'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('home') }}
+                    </div>
+                @endif
             </div>
             <div class="col-lg-6 col-sm-12 mb-3 ms-auto">
-                <form action="" method="POST">
+                <form action="/" method="POST">
+                    @csrf
                     <div class="mb-3">
-                        <input type="name" class="form-control" id="name" aria-describedby="name" placeholder="Nama" />
+                        <input name="name" type="name" class="form-control" id="name" aria-describedby="name"
+                            placeholder="Nama" />
+                        @error('name')
+                            <div class="small text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" id="email" aria-describedby="email"
+                        <input name="email" type="email" class="form-control" id="email" aria-describedby="email"
                             placeholder="Email" />
+                        @error('email')
+                            <div class="small text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-                        <textarea class="form-control" id="pesan" rows="3" placeholder="Kritik dan Saran"></textarea>
+                        <textarea name="message" class="form-control" id="pesan" rows="3"
+                            placeholder="Kritik dan Saran"></textarea>
+                        @error('message')
+                            <div class="small text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
-                    <div class="g-recaptcha mb-3" data-sitekey="6LfN4BMdAAAAAEJCxdfxNjYPsFPad0nfnq7ZM6qg"></div>
+                    <div class="mb-3">
+                        {!! htmlFormSnippet() !!}
+                        @error('g-recaptcha-response')
+                            <div class="small text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                     <button class="btn btn-danger" type="submit">Kirim</button>
                 </form>
             </div>
