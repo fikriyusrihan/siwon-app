@@ -11,6 +11,11 @@
                         <p>
                             Silakan login untuk menyimpan progress program yang diikuti.
                         </p>
+                        @if (session()->has('login'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('login') }}
+                            </div>
+                        @endif
                         <form action="" method="POST">
                             <div class="mb-3">
                                 <input type="email" class="form-control" id="field-name" placeholder="Email" />
@@ -18,11 +23,6 @@
                             <div class="mb-3">
                                 <input type="password" class="form-control" id="field-password" placeholder="Password" />
                             </div>
-                            <!-- Add reCAPTCHA only when failed login attempts for 3 times -->
-                            <!-- <div
-                      class="g-recaptcha mb-3"
-                      data-sitekey="6LfN4BMdAAAAAEJCxdfxNjYPsFPad0nfnq7ZM6qg"
-                    ></div> -->
                             <div class="mb-3">
                                 <a href="/auth/forgot-password"><small>Lupa password?</small></a><br />
                                 <a href="/auth/register"><small>Buat akun baru</small></a>

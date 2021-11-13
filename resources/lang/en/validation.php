@@ -137,8 +137,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'g-recaptcha-response' => [
+            'recaptcha' => 'The :attribute is not valid.',
         ],
     ],
 
@@ -153,6 +153,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'confirm-password' => 'confirm password',
+        'g-recaptcha-response' => 'captcha',
+    ],
 
 ];
