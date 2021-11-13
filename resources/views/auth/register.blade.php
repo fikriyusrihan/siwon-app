@@ -12,18 +12,42 @@
                             Buat akun untuk menyimpan progress program yang kamu ikuti.
                         </p>
                         <form action="" method="POST">
+                            @csrf
                             <div class="mb-3">
-                                <input type="email" class="form-control" id="field-email" placeholder="Email" />
+                                <input name="email" type="email" class="form-control" id="field-email" placeholder="Email"
+                                    value="{{ old('email') }}" required />
+                                @error('email')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="field-name" placeholder="Nama" />
+                                <input name="name" type="text" class="form-control" id="field-name" placeholder="Nama"
+                                    value="{{ old('name') }}" required />
+                                @error('name')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" id="field-password" placeholder="Password" />
+                                <input name="password" type="password" class="form-control" id="field-password"
+                                    placeholder="Password" required />
+                                @error('password')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" id="field-password-confirm"
-                                    placeholder="Konfirmasi Password" />
+                                <input name="confirm-password" type="password" class="form-control"
+                                    id="field-password-confirm" placeholder="Konfirmasi Password" required />
+                                @error('confirm-password')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="g-recaptcha mb-3" data-sitekey="6LfN4BMdAAAAAEJCxdfxNjYPsFPad0nfnq7ZM6qg"></div>
                             <div class="mb-3">
