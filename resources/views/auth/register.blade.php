@@ -49,7 +49,14 @@
                                     </div>
                                 @enderror
                             </div>
-                            <div class="g-recaptcha mb-3" data-sitekey="6LfN4BMdAAAAAEJCxdfxNjYPsFPad0nfnq7ZM6qg"></div>
+                            <div class="mb-3">
+                                {!! htmlFormSnippet() !!}
+                                @error('g-recaptcha-response')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                             <div class="mb-3">
                                 <a href="./login"><small>Sudah memiliki akun? Login</small></a><br>
                                 <a href="./forgot-password"><small>Lupa password?</small></a>

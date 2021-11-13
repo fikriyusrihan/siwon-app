@@ -20,6 +20,7 @@ class RegisterController extends Controller
             'name' => 'required',
             'password' => 'required|min:6',
             'confirm-password' => 'required|same:password',
+            'g-recaptcha-response' => 'recaptcha',
         ]);
 
         // Password encyption with bcrypt
