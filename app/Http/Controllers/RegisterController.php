@@ -35,7 +35,7 @@ class RegisterController extends Controller
         ]);
 
         // Redirect to login page with session data
-        $request->session()->flash('login', 'Registrasi berhasil, silakan login.');
+        $request->session()->flash('login-message', '<div class="alert alert-success" role="alert">Registrasi berhasil, silakan login.</div>');
         return redirect('auth/login');
     }
 }

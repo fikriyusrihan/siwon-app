@@ -11,17 +11,28 @@
                         <p>
                             Silakan login untuk menyimpan progress program yang diikuti.
                         </p>
-                        @if (session()->has('login'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('login') }}
-                            </div>
+                        @if (session()->has('login-message'))
+                            {!! session('login-message') !!}
                         @endif
-                        <form action="" method="POST">
+                        <form action="/auth/login" method="POST">
+                            @csrf
                             <div class="mb-3">
-                                <input type="email" class="form-control" id="field-name" placeholder="Email" />
+                                <input name="email" type="email" class="form-control" id="field-name" placeholder="Email"
+                                    value="{{ old('email') }}" />
+                                @error('email')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control" id="field-password" placeholder="Password" />
+                                <input name="password" type="password" class="form-control" id="field-password"
+                                    placeholder="Password" />
+                                @error('password')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <a href="/auth/forgot-password"><small>Lupa password?</small></a><br />
