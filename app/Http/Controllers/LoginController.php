@@ -24,10 +24,25 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            if (auth()->user()->is_admin) {
+                return redirect()->intended('dashboard');
+            }
+
+            return redirect()->intended('/');
         }
 
         // User not valid, redirect to login page
         return back()->with('login-message', '<div class="alert alert-danger" role="alert">Email atau password yang anda masukkan salah.</div>');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

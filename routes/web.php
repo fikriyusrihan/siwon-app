@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -15,16 +16,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Homepage
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/', [HomeController::class, 'store']);
 
-Route::get('auth/login', [LoginController::class, 'index']);
-Route::post('auth/login', [LoginController::class, 'authenticate']);
+// Auth (Login)
+Route::get('/auth/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/auth/login', [LoginController::class, 'authenticate']);
 
-Route::get('auth/register', [RegisterController::class, 'index']);
-Route::post('auth/register', [RegisterController::class, 'store']);
+// Auth (logout)
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('auth/forgot-password', function () {
+// Auth (Register)
+Route::get('/auth/register', [RegisterController::class, 'index']);
+Route::post('/auth/register', [RegisterController::class, 'store']);
+
+// Auth (Forgot Password)
+Route::get('/auth/forgot-password', function () {
     return view('auth/forgot-password');
 });
+
+// Dashboard Page
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
