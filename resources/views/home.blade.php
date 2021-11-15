@@ -34,17 +34,15 @@
             <div class="featured-card mt-4">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/programs/programs-1.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/programs/programs-1.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Daily Routine Excercise</h4>
                             </div>
                         </div>
-                        <div class="programs-card py-5 rounded" style="
-                                                      background-image: url('assets/images/programs/programs-2.png');
-                                                    ">
+                        <div class="programs-card py-5 rounded"
+                            style="background-image: url('assets/images/programs/programs-2.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Intense Fat Burning</h4>
@@ -52,17 +50,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/programs/programs-3.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/programs/programs-3.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">Beginner Workout Excercise</h4>
                             </div>
                         </div>
-                        <div class="programs-card p-5 rounded" style="
-                                                      background-image: url('assets/images/programs/programs-4.png');
-                                                    ">
+                        <div class="programs-card p-5 rounded"
+                            style="background-image: url('assets/images/programs/programs-4.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Programs</p>
                                 <h4 class="fw-bold">7 Days of Cardio</h4>
@@ -85,17 +81,15 @@
             <div class="featured-card mt-4">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/workout/workout-1.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/workout/workout-1.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Fat Burning Workout</h4>
                             </div>
                         </div>
-                        <div class="programs-card py-5 rounded" style="
-                                                      background-image: url('assets/images/workout/workout-2.png');
-                                                    ">
+                        <div class="programs-card py-5 rounded"
+                            style="background-image: url('assets/images/workout/workout-2.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Simple Workout for Arm</h4>
@@ -103,17 +97,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/workout/workout-3.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/workout/workout-3.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">9 Minutes Workout</h4>
                             </div>
                         </div>
-                        <div class="programs-card p-5 rounded" style="
-                                                      background-image: url('assets/images/workout/workout-4.png');
-                                                    ">
+                        <div class="programs-card p-5 rounded"
+                            style="background-image: url('assets/images/workout/workout-4.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Workout</p>
                                 <h4 class="fw-bold">Intense Workout for Thighs and Hips</h4>
@@ -135,17 +127,15 @@
             <div class="featured-card mt-4">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/healthy_foods/foods-1.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/healthy_foods/foods-1.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Salmon Steak</h4>
                             </div>
                         </div>
-                        <div class="programs-card py-5 rounded" style="
-                                                      background-image: url('assets/images/healthy_foods/foods-2.png');
-                                                    ">
+                        <div class="programs-card py-5 rounded"
+                            style="background-image: url('assets/images/healthy_foods/foods-2.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Heavenly Beans</h4>
@@ -153,17 +143,15 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                                      background-image: url('assets/images/healthy_foods/foods-3.png');
-                                                    ">
+                        <div class="programs-card p-5 mb-3 rounded"
+                            style="background-image: url('assets/images/healthy_foods/foods-3.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Avocado Toast</h4>
                             </div>
                         </div>
-                        <div class="programs-card p-5 rounded" style="
-                                                      background-image: url('assets/images/healthy_foods/foods-4.png');
-                                                    ">
+                        <div class="programs-card p-5 rounded"
+                            style="background-image: url('assets/images/healthy_foods/foods-4.png');">
                             <div class="layer p-5 rounded">
                                 <p class="mb-1">Healthy Foods</p>
                                 <h4 class="fw-bold">Berries Smoothie</h4>
