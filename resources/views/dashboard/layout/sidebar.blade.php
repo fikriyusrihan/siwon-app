@@ -34,7 +34,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/workout">
+        <a class="nav-link" href="/dashboard/workouts">
             <i class="fas fa-fw fa-dumbbell"></i>
             <span>Workout</span></a>
     </li>
@@ -56,14 +56,14 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/meal-plan">
+        <a class="nav-link" href="/dashboard/mealplans">
             <i class="fas fa-calendar-alt"></i>
             <span>Meal Plan</span></a>
     </li>
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/resep">
+        <a class="nav-link" href="/dashboard/foodrecipes">
             <i class="fas fa-scroll"></i>
             <span>Resep Makanan</span></a>
     </li>

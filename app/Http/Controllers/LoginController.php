@@ -7,11 +7,24 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('auth/login');
     }
 
+
+    /**
+     * Validate email and password from login form.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function authenticate(Request $request)
     {
         // Login form validation
