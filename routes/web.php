@@ -37,4 +37,4 @@ Route::get('/auth/forgot-password', function () {
 });
 
 // Dashboard Page
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'admin']);
