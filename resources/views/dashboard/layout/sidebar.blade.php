@@ -32,14 +32,14 @@
         Sport Activity
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-dumbbell"></i>
             <span>Workout</span></a>
     </li>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-calendar-minus"></i>
@@ -54,14 +54,14 @@
         Healthy Foods
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-calendar-alt"></i>
             <span>Meal Plan</span></a>
     </li>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-scroll"></i>
