@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FoodRecipe;
 use Illuminate\Http\Request;
+use App\Models\Suggestion;
 
-class ExampleController extends Controller
+class AdminFoodRecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,15 @@ class ExampleController extends Controller
      */
     public function index()
     {
-        //
+
+        $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
+        $recipes = FoodRecipe::all(['id', 'name', 'photo', 'poster', 'updated_at'])->sortByDesc('created_at');
+
+        return view('dashboard.recipe.recipe', [
+            'active' => 'recipe',
+            'messages' => $messages,
+            'recipes' => $recipes,
+        ]);
     }
 
     /**
@@ -23,7 +33,13 @@ class ExampleController extends Controller
      */
     public function create()
     {
-        //
+        $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
+
+
+        return view('dashboard.recipe.create', [
+            'active' => 'recipe',
+            'messages' => $messages,
+        ]);
     }
 
     /**
@@ -56,7 +72,7 @@ class ExampleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return 'hello';
     }
 
     /**
@@ -79,6 +95,8 @@ class ExampleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        FoodRecipe::destroy($id);
+
+        return redirect('dashboard/foodrecipes');
     }
 }

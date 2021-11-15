@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminFoodRecipeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -42,3 +43,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 
 // Saran Page
 Route::resource('dashboard/suggestions', SuggestionController::class)->middleware('auth', 'admin');
+
+// Resep Makanan Pge
+Route::resource('dashboard/foodrecipes', AdminFoodRecipeController::class)->middleware('auth', 'admin');

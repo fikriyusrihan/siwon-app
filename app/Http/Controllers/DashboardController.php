@@ -33,6 +33,7 @@ class DashboardController extends Controller
         $suggestions = Suggestion::all()->sortByDesc('created_at')->take(4);
 
         return view('dashboard/index', [
+            'active' => 'dashboard',
             'counter' => $count_data,
             'messages' => $suggestions,
         ]);

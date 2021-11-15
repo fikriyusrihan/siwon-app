@@ -18,6 +18,7 @@ class SuggestionController extends Controller
         $suggestions = Suggestion::all()->sortByDesc('created_at');
 
         return view('dashboard.saran', [
+            'active' => 'suggestion',
             'messages' => $suggestions->take(4),
             'suggestions' => $suggestions,
         ]);

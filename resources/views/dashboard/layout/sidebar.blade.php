@@ -18,7 +18,7 @@
     </div>
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item @if ($active == 'dashboard'){{ 'active' }}@endif">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -62,7 +62,7 @@
     </li>
 
     <!-- Nav Item -->
-    <li class="nav-item">
+    <li class="nav-item @if ($active == 'recipe'){{ 'active' }}@endif">
         <a class="nav-link" href="/dashboard/foodrecipes">
             <i class="fas fa-scroll"></i>
             <span>Resep Makanan</span></a>
@@ -77,7 +77,7 @@
     </div>
 
     <!-- Nav Item -->
-    <li class="nav-item">
+    <li class="nav-item @if ($active == 'suggestion'){{ 'active' }}@endif">
         <a class="nav-link" href="/dashboard/suggestions">
             <i class="fas fa-sticky-note"></i>
             <span>Saran</span></a>
