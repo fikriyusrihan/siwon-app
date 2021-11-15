@@ -78,7 +78,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/saran">
+        <a class="nav-link" href="/dashboard/suggestions">
             <i class="fas fa-sticky-note"></i>
             <span>Saran</span></a>
     </li>

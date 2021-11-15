@@ -18,11 +18,12 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
+                                <th>Waktu</th>
                                 <th>Saran</th>
-                                <th>Action</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,10 +37,20 @@
                                     @endphp
                                     <td>{{ $row->name }}</td>
                                     <td>{{ $row->email }}</td>
+                                    @php
+                                        $phpdate = strtotime($row->created_at);
+                                        $mysqldate = date('d-m-Y H:i:s', $phpdate);
+                                        echo '<td>'. $mysqldate .'</td>'
+                                    @endphp
                                     <td>{{ $row->message }}</td>
                                     <td>
-                                        <button class="btn btn-info">Detail</button>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <form class="d-inline" action="/dashboard/suggestions/{{ $row->id }}"
+                                            method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return alert('Yakin untuk menghapus pesan?')"><i class="fas fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
