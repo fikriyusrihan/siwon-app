@@ -55,10 +55,15 @@
                                 Selamat Datang, {{ auth()->user()->name }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if (auth()->user()->is_admin)
+                                    <a href="/dashboard" class="dropdown-item">
+                                        <li><i class="bi bi-speedometer2 me-2"></i> Dashboard</li>
+                                    </a>
+                                @endif
                                 <form action="/logout" method="post">
                                     @csrf
                                     <button type="submit" class="dropdown-item">
-                                        <li><i class="bi bi-box-arrow-right me-2"></i>  Logout</li>
+                                        <li><i class="bi bi-box-arrow-right me-2"></i> Logout</li>
                                     </button>
                                 </form>
 
