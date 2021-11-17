@@ -55,7 +55,7 @@
     </div>
 
     <!-- Nav Item -->
-    <li class="nav-item">
+    <li class="nav-item @if ($active == 'mealplan'){{ 'active' }}@endif">
         <a class="nav-link" href="/dashboard/mealplans">
             <i class="fas fa-calendar-alt"></i>
             <span>Meal Plan</span></a>

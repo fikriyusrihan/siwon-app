@@ -6,22 +6,28 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Resep Makanan</h1>
-        <p class="mb-4">Menampilkan daftar resep makanan yang telah diterbitkan.</p>
+        <p class="mb-4">Menambahkan data resep makanan baru.</p>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Resep Makanan</h6>
             </div>
             <div class="card-body px-lg-5">
-                <form action="dashboard/foodrecipes/store" method="post">
+                <form action="/dashboard/foodrecipes" enctype="multipart/form-data" method="post">
+                    @csrf
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
                             <p class="my-0">Judul Resep Makanan</p>
                             <p class="small text-danger mb-2">*required</p>
                         </div>
                         <div class="col-md-9 col-sm-12 px-0">
-                            <input class="form-control form-control-user" type="text" id="name" name="name" value="">
-                            <small class="text-danger my-0"></small>
+                            <input class="form-control form-control-user" type="text" id="name" name="name"
+                                value="{{ old('name') }}">
+                            @error('name')
+                                <div class="small text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -30,8 +36,12 @@
                             <p class="small text-danger mb-2">*autofill</p>
                         </div>
                         <div class="col-md-9 col-sm-12 px-0">
-                            <input class="form-control form-control-user" type="text" id="name" name="name" value="" readonly>
-                            <small class="text-danger my-0"></small>
+                            <input class="form-control form-control-user" type="text" id="slug" name="slug" value="">
+                            @error('slug')
+                                <div class="small text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -40,9 +50,14 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover" accept=".png">
+                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover"
+                                accept=".png,.jpg">
                             <label class="custom-file-label" for="file-cover">Pilih file yang akan diupload</label>
-                            <small class="text-danger"></small>
+                            @error('file-cover')
+                                <div class="small text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -51,9 +66,14 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster" accept=".png">
+                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster"
+                                accept=".png,.jpg">
                             <label class="custom-file-label" for="file-poster">Pilih file yang akan diupload</label>
-                            <small class="text-danger"></small>
+                            @error('file-poster')
+                                <div class="small text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit">Tambah</button>
@@ -63,4 +83,26 @@
 
     </div>
     <!-- /.container-fluid -->
+@endsection
+
+
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('#file-cover').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+
+        $('#file-poster').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+    </script>
 @endsection
