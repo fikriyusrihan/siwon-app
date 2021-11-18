@@ -17,7 +17,7 @@ class AdminFoodRecipeController extends Controller
     {
 
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
-        $recipes = FoodRecipe::all(['id', 'slug', 'name', 'photo', 'poster', 'updated_at'])->sortByDesc('created_at');
+        $recipes = FoodRecipe::all()->sortByDesc('created_at');
 
         return view('dashboard.recipe.recipe', [
             'active' => 'recipe',
@@ -52,21 +52,20 @@ class AdminFoodRecipeController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:food_recipes,slug',
             'file-cover' => 'required|max:2048',
             'file-poster' => 'required|max:2048',
         ]);
 
-        $pathCover = $request->file('file-cover')->store('assets/images/foodrecipe');
-
         $fileName = time() . '.' . $request->file('file-poster')->extension();
-        $request->file('file-poster')->move(public_path('assets/images/foodrecipe'), $fileName);
+        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
+        $request->file('file-cover')->move(public_path('assets/images/foodrecipe/cover'), $fileName);
 
         $save = new FoodRecipe();
 
         $save->name = $validatedData['name'];
         $save->slug = $validatedData['slug'];
-        $save->photo = $pathCover;
+        $save->photo = $fileName;
         $save->poster = $fileName;
 
         FoodRecipe::create([

@@ -40,8 +40,10 @@
                                     @endphp
                                     <td>{{ $row->name }}</td>
                                     <td>{{ $row->slug }}</td>
-                                    <td><img src="{{ asset('assets/images/foodrecipe/'.$row->photo) }}" alt="" width="100px"></td>
-                                    <td><img src="{{ asset('assets/images/foodrecipe/'.$row->poster) }}" alt="" width="100px"></td>
+                                    <td><img src="{{ asset('assets/images/foodrecipe/cover/' . $row->photo) }}" alt=""
+                                            width="100px"></td>
+                                    <td><img src="{{ asset('assets/images/foodrecipe/poster/' . $row->poster) }}" alt=""
+                                            width="100px"></td>
                                     @php
                                         $phpdate = strtotime($row->updated_at);
                                         $mysqldate = date('d-m-Y H:i:s', $phpdate);
@@ -49,8 +51,8 @@
                                     @endphp
                                     <td>
                                         <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
-                                        <form class="d-inline" action="/dashboard/foodrecipes/{{ $row->id }}/edit"
-                                            method="get">
+                                        <form class="d-inline"
+                                            action="/dashboard/foodrecipes/{{ $row->id }}/edit" method="get">
                                             @csrf
                                             <button type="submit" class="btn btn-info">
                                                 <i class="fas fa-pen"></i>
@@ -61,7 +63,7 @@
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-danger"
-                                                onclick="return alert('Yakin untuk menghapus pesan?')"><i
+                                                onclick="return alert('Yakin untuk menghapus resep?')"><i
                                                     class="fas fa-trash"></i></button>
                                         </form>
                                     </td>
