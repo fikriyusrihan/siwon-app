@@ -50,7 +50,32 @@ class AdminMealPlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:meal_plans,slug',
+            'file-cover' => 'required|max:2048',
+            'file-poster' => 'required|max:2048',
+        ]);
+
+        $fileName = time() . '.' . $request->file('file-poster')->extension();
+        $request->file('file-poster')->move(public_path('assets/images/mealplan/poster'), $fileName);
+        $request->file('file-cover')->move(public_path('assets/images/mealplan/cover'), $fileName);
+
+        $save = new MealPlan();
+
+        $save->name = $validatedData['name'];
+        $save->slug = $validatedData['slug'];
+        $save->photo = $fileName;
+        $save->poster = $fileName;
+
+        MealPlan::create([
+            'name' => $save->name,
+            'slug' => $save->slug,
+            'photo' => $save->photo,
+            'poster' => $save->poster,
+        ]);
+
+        return redirect('dashboard/mealplans');
     }
 
     /**
