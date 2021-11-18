@@ -97,7 +97,14 @@ class AdminFoodRecipeController extends Controller
      */
     public function edit($id)
     {
-        return 'hello';
+        $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
+        $recipe = FoodRecipe::find($id);
+
+        return view('dashboard.mealplans.edit', [
+            'active' => 'recipe',
+            'messages' => $messages,
+            'recipe' => $recipe,
+        ]);
     }
 
     /**
@@ -109,7 +116,32 @@ class AdminFoodRecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'slug' => 'required',
+        ]);
+
+        
+        $fileName = time() . '.' . $request->file('file-poster')->extension();
+        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
+        $request->file('file-cover')->move(public_path('assets/images/foodrecipe/cover'), $fileName);
+        
+
+        $save = new FoodRecipe();
+
+        $save->name = $validatedData['name'];
+        $save->slug = $validatedData['slug'];
+        $save->photo = $fileName;
+        $save->poster = $fileName;
+
+        FoodRecipe::create([
+            'name' => $save->name,
+            'slug' => $save->slug,
+            'photo' => $save->photo,
+            'poster' => $save->poster,
+        ]);
+
+        return redirect('dashboard/foodrecipes');
     }
 
     /**
