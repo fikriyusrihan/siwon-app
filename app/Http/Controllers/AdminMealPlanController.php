@@ -120,6 +120,8 @@ class AdminMealPlanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        MealPlan::destroy($id);
+
+        return redirect('dashboard/mealplans');
     }
 }

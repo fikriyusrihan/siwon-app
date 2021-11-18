@@ -38,8 +38,10 @@
                                         echo '<td>' . $i++ . '</td>';
                                     @endphp
                                     <td>{{ $row->name }}</td>
-                                    <td>{{ $row->photo }}</td>
-                                    <td>{{ $row->poster }}</td>
+                                    <td><img src="{{ asset('assets/images/mealplan/cover/' . $row->photo) }}" alt=""
+                                            width="100px"></td>
+                                    <td><img img src="{{ asset('assets/images/mealplan/poster/' . $row->poster) }}"
+                                            alt="" width="100px"></td>
                                     @php
                                         $phpdate = strtotime($row->updated_at);
                                         $mysqldate = date('d-m-Y H:i:s', $phpdate);
@@ -47,19 +49,19 @@
                                     @endphp
                                     <td>
                                         <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
-                                        <form class="d-inline" action="/dashboard/foodrecipes/{{ $row->id }}/edit"
-                                            method="get">
+                                        <form class="d-inline"
+                                            action="/dashboard/mealplans/{{ $row->id }}/edit" method="get">
                                             @csrf
                                             <button type="submit" class="btn btn-info">
                                                 <i class="fas fa-pen"></i>
                                             </button>
                                         </form>
-                                        <form class="d-inline" action="/dashboard/foodrecipes/{{ $row->id }}"
+                                        <form class="d-inline" action="/dashboard/mealplans/{{ $row->id }}"
                                             method="post">
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-danger"
-                                                onclick="return alert('Yakin untuk menghapus pesan?')"><i
+                                                onclick="return alert('Yakin untuk menghapus mealplan?')"><i
                                                     class="fas fa-trash"></i></button>
                                         </form>
                                     </td>

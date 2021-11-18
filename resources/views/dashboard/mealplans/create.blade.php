@@ -49,7 +49,8 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover" accept=".png">
+                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover"
+                                accept=".png,.jpg">
                             <label class="custom-file-label" for="file-cover">Pilih file yang akan diupload</label>
                             @error('file-cover')
                                 <div class="small text-danger">
@@ -64,7 +65,8 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster" accept=".png">
+                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster"
+                                accept=".png,.jpg">
                             <label class="custom-file-label" for="file-poster">Pilih file yang akan diupload</label>
                             @error('file-poster')
                                 <div class="small text-danger">
