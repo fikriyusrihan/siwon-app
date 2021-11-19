@@ -18,8 +18,8 @@
     </div>
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item @if ($active == 'dashboard'){{ 'active' }}@endif">
+        <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -34,14 +34,14 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="/dashboard/workouts">
             <i class="fas fa-fw fa-dumbbell"></i>
             <span>Workout</span></a>
     </li>
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="/dashboard/programs">
             <i class="fas fa-fw fa-calendar-minus"></i>
             <span>Programs</span></a>
     </li>
@@ -55,15 +55,15 @@
     </div>
 
     <!-- Nav Item -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @if ($active == 'mealplan'){{ 'active' }}@endif">
+        <a class="nav-link" href="/dashboard/mealplans">
             <i class="fas fa-calendar-alt"></i>
             <span>Meal Plan</span></a>
     </li>
 
     <!-- Nav Item -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @if ($active == 'recipe'){{ 'active' }}@endif">
+        <a class="nav-link" href="/dashboard/foodrecipes">
             <i class="fas fa-scroll"></i>
             <span>Resep Makanan</span></a>
     </li>
@@ -77,8 +77,8 @@
     </div>
 
     <!-- Nav Item -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item @if ($active == 'suggestion'){{ 'active' }}@endif">
+        <a class="nav-link" href="/dashboard/suggestions">
             <i class="fas fa-sticky-note"></i>
             <span>Saran</span></a>
     </li>

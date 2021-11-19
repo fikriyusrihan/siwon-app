@@ -15,7 +15,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <span class="badge badge-danger badge-counter">7</span>
+                <span class="badge badge-danger badge-counter">{{ $messages->count() }}</span>
             </a>
             <!-- Dropdown - Messages -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -23,37 +23,15 @@
                 <h6 class="dropdown-header">
                     Message Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div class="font-weight-bold">
-                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                            problem I've been having.</div>
-                        <div class="small text-gray-500">Emily Fowler · 58m</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div>
-                        <div class="text-truncate">I have the photos that you ordered last month, how
-                            would you like them sent to you?</div>
-                        <div class="small text-gray-500">Jae Chun · 1d</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div>
-                        <div class="text-truncate">Last month's report looks great, I am very happy
-                            with
-                            the progress so far, keep up the good work!</div>
-                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                    </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                    <div>
-                        <div class="text-truncate">Am I a good boy? The reason I ask is because
-                            someone
-                            told me that people say this to all dogs, even if they aren't good...</div>
-                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                    </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                @foreach ($messages as $row)
+                    <a class="dropdown-item d-flex align-items-center" href="">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">{{ $row->message }}</div>
+                            <div class="small text-gray-500">{{ $row->name }} | {{ $row->email }}</div>
+                        </div>
+                    </a>
+                @endforeach
+                <a class="dropdown-item text-center small text-gray-500" href="/dashboard/saran">Read More Messages</a>
             </div>
         </li>
 

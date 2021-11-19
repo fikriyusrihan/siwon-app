@@ -20,6 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('assets/dashboard/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -91,10 +92,12 @@
 
     <!-- Page level plugins -->
     <script src="{{ asset('assets/dashboard/vendor/chart.js/Chart.min.js') }}"></script>
-
+    
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets/dashboard/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('assets/dashboard/js/demo/chart-pie-demo.js') }}"></script>
+    
+    @yield('script')
 
 </body>
 
