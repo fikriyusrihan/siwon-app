@@ -53,20 +53,22 @@ class AdminFoodRecipeController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'slug' => 'required|unique:food_recipes,slug',
-            'file-cover' => 'required|max:2048',
-            'file-poster' => 'required|max:2048',
+            'file_cover' => 'required|max:2048',
+            'file_poster' => 'required|max:2048',
         ]);
 
-        $fileName = time() . '.' . $request->file('file-poster')->extension();
-        $request->file('file-cover')->move(public_path('assets/images/foodrecipe/cover'), $fileName);
-        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
+        $coverFileName = time() . '.' . $request->file('file_cover')->extension();
+        $request->file('file_cover')->move(public_path('assets/images/foodrecipe/cover'), $coverFileName);
+
+        $posterFileName = time() . '.' . $request->file('file_poster')->extension();
+        $request->file('file_poster')->move(public_path('assets/images/foodrecipe/poster'), $posterFileName);
 
         $save = new FoodRecipe();
 
         $save->name = $validatedData['name'];
         $save->slug = $validatedData['slug'];
-        $save->photo = $fileName;
-        $save->poster = $fileName;
+        $save->photo = $coverFileName;
+        $save->poster = $posterFileName;
 
         FoodRecipe::create([
             'name' => $save->name,

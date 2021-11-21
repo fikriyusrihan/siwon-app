@@ -13,7 +13,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Meal Plan</h6>
             </div>
             <div class="card-body px-lg-5">
-                <form action="/dashboard/mealplans" enctype="multipart/form-data" method="post">
+                <form action="/dashboard/mealplan" enctype="multipart/form-data" method="post">
                     @csrf
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
@@ -21,7 +21,7 @@
                             <p class="small text-danger mb-2">*required</p>
                         </div>
                         <div class="col-md-9 col-sm-12 px-0">
-                            <input class="form-control form-control-user" type="text" id="name" name="name" value="">
+                            <input class="form-control form-control-user" type="text" id="name" name="name" value="{{ old('name') }}">
                             @error('name')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -35,7 +35,7 @@
                             <p class="small text-danger mb-2">*autofill</p>
                         </div>
                         <div class="col-md-9 col-sm-12 px-0">
-                            <input class="form-control form-control-user" type="text" id="slug" name="slug" value="">
+                            <input class="form-control form-control-user" type="text" id="slug" name="slug" value="{{ old('slug') }}">
                             @error('slug')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -49,9 +49,9 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover"
+                            <input class="custom-file-input" type="file" id="file_cover" name="file_cover"
                                 accept=".png,.jpg">
-                            <label class="custom-file-label" for="file-cover">Pilih file yang akan diupload</label>
+                            <label class="custom-file-label" for="file_cover">Pilih file yang akan diupload</label>
                             @error('file-cover')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -65,9 +65,9 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster"
+                            <input class="custom-file-input" type="file" id="file_poster" name="file_poster"
                                 accept=".png,.jpg">
-                            <label class="custom-file-label" for="file-poster">Pilih file yang akan diupload</label>
+                            <label class="custom-file-label" for="file_poster">Pilih file yang akan diupload</label>
                             @error('file-poster')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -104,7 +104,7 @@
         }
 
         // Print name file in cover form
-        $('#file-cover').on('change', function() {
+        $('#file_cover').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
@@ -112,7 +112,7 @@
         })
 
         // Print name file in poster form
-        $('#file-poster').on('change', function() {
+        $('#file_poster').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
