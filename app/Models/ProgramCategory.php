@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Program;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,4 +18,12 @@ class ProgramCategory extends Model
     protected $guarded = [
         'id'
     ];
+
+    /**
+     * Get the program associated with the category.
+     */
+    public function category()
+    {
+        return $this->hasMany(Program::class);
+    }
 }

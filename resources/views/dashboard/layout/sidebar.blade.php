@@ -40,7 +40,7 @@
     </li>
 
     <!-- Nav Item -->
-    <li class="nav-item">
+    <li class="nav-item @if ($active == 'programs'){{ 'active' }}@endif">
         <a class="nav-link" href="/dashboard/program">
             <i class="fas fa-fw fa-calendar-minus"></i>
             <span>Programs</span></a>

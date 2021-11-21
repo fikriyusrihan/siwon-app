@@ -8,7 +8,7 @@
         <h1 class="h3 mb-2 text-gray-800">Program</h1>
         <p class="mb-4">Menampilkan daftar program yang telah diterbitkan.</p>
 
-        <a href="/dashboard/mealplan/create" class="btn btn-primary mb-3">+ Tambah Program</a>
+        <a href="/dashboard/program/create" class="btn btn-primary mb-3">+ Tambah Program</a>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -38,7 +38,7 @@
                                         echo '<td>' . $i++ . '</td>';
                                     @endphp
                                     <td>{{ $row->name }}</td>
-                                    <td>{{ $row->category_id }}</td>
+                                    <td>{{ $row->category->title }}</td>
                                     <td><img src="{{ asset('assets/images/program/cover/' . $row->photo) }}" alt=""
                                             width="100px"></td>
                                     <td><img img src="{{ asset('assets/images/program/poster/' . $row->poster) }}" alt=""

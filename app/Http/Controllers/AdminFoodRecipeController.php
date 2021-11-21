@@ -63,19 +63,13 @@ class AdminFoodRecipeController extends Controller
         $posterFileName = time() . '.' . $request->file('file_poster')->extension();
         $request->file('file_poster')->move(public_path('assets/images/foodrecipe/poster'), $posterFileName);
 
-        $save = new FoodRecipe();
+        $recipe = new FoodRecipe();
+        $recipe->name = $validatedData['name'];
+        $recipe->slug = $validatedData['slug'];
+        $recipe->photo = $coverFileName;
+        $recipe->poster = $posterFileName;
 
-        $save->name = $validatedData['name'];
-        $save->slug = $validatedData['slug'];
-        $save->photo = $coverFileName;
-        $save->poster = $posterFileName;
-
-        FoodRecipe::create([
-            'name' => $save->name,
-            'slug' => $save->slug,
-            'photo' => $save->photo,
-            'poster' => $save->poster,
-        ]);
+        $recipe->save();
 
         return redirect('dashboard/foodrecipe');
     }
