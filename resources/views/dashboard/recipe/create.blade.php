@@ -13,7 +13,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Resep Makanan</h6>
             </div>
             <div class="card-body px-lg-5">
-                <form action="/dashboard/foodrecipes" enctype="multipart/form-data" method="post">
+                <form action="/dashboard/foodrecipe" enctype="multipart/form-data" method="post">
                     @csrf
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
@@ -51,7 +51,7 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file px-2">
-                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover"
+                            <input class="custom-file-input" type="file" id="file_cover" name="file_cover"
                                 accept=".png,.jpg">
                             <label class="custom-file-label" for="file-cover">Pilih file yang akan diupload</label>
                             @error('file-cover')
@@ -67,10 +67,10 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster"
+                            <input class="custom-file-input" type="file" id="file_poster" name="file_poster"
                                 accept=".png,.jpg">
                             <label class="custom-file-label" for="file-poster">Pilih file yang akan diupload</label>
-                            @error('file-poster')
+                            @error('file_poster')
                                 <div class="small text-danger">
                                     {{ $message }}
                                 </div>
@@ -106,7 +106,7 @@
         }
 
         // Print name file in cover form
-        $('#file-cover').on('change', function() {
+        $('#file_cover').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
@@ -114,7 +114,7 @@
         })
 
         // Print name file in poster form
-        $('#file-poster').on('change', function() {
+        $('#file_poster').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label

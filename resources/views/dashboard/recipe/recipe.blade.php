@@ -8,7 +8,7 @@
         <h1 class="h3 mb-2 text-gray-800">Resep Makanan</h1>
         <p class="mb-4">Menampilkan daftar resep makanan yang telah diterbitkan.</p>
 
-        <a href="/dashboard/foodrecipes/create" class="btn btn-primary mb-3">+ Tambah Resep Makanan</a>
+        <a href="/dashboard/foodrecipe/create" class="btn btn-primary mb-3">+ Tambah Resep Makanan</a>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -52,13 +52,13 @@
                                     <td>
                                         <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
                                         <form class="d-inline"
-                                            action="/dashboard/foodrecipes/{{ $row->id }}/edit" method="get">
+                                            action="/dashboard/foodrecipe/{{ $row->slug }}/edit" method="get">
                                             @csrf
                                             <button type="submit" class="btn btn-info">
                                                 <i class="fas fa-pen"></i>
                                             </button>
                                         </form>
-                                        <form class="d-inline" action="/dashboard/foodrecipes/{{ $row->id }}"
+                                        <form class="d-inline" action="/dashboard/foodrecipe/{{ $row->slug }}"
                                             method="post">
                                             @method('delete')
                                             @csrf

@@ -8,7 +8,7 @@
         <h1 class="h3 mb-2 text-gray-800">Meal Plan</h1>
         <p class="mb-4">Menampilkan daftar meal plan yang telah diterbitkan.</p>
 
-        <a href="/dashboard/mealplans/create" class="btn btn-primary mb-3">+ Tambah Meal Plan</a>
+        <a href="/dashboard/mealplan/create" class="btn btn-primary mb-3">+ Tambah Meal Plan</a>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -50,13 +50,13 @@
                                     <td>
                                         <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
                                         <form class="d-inline"
-                                            action="/dashboard/mealplans/{{ $row->id }}/edit" method="get">
+                                            action="/dashboard/mealplan/{{ $row->slug }}/edit" method="get">
                                             @csrf
                                             <button type="submit" class="btn btn-info">
                                                 <i class="fas fa-pen"></i>
                                             </button>
                                         </form>
-                                        <form class="d-inline" action="/dashboard/mealplans/{{ $row->id }}"
+                                        <form class="d-inline" action="/dashboard/mealplan/{{ $row->slug }}"
                                             method="post">
                                             @method('delete')
                                             @csrf

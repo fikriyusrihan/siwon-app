@@ -17,4 +17,14 @@ class MealPlan extends Model
     protected $guarded = [
         'id'
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

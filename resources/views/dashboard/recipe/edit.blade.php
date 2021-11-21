@@ -5,20 +5,20 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Meal Plan</h1>
-        <p class="mb-4">Memperbarui data meal plan baru.</p>
+        <h1 class="h3 mb-2 text-gray-800">Resep Makanan</h1>
+        <p class="mb-4">Memperbarui data resep makanan baru.</p>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Update Meal Plan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Update Resep Makanan</h6>
             </div>
             <div class="card-body px-lg-5">
-                <form action="/dashboard/mealplan/{{ $recipe->slug }}" enctype="multipart/form-data" method="post">
+                <form action="/dashboard/foodrecipe/{{ $recipe->slug }}" enctype="multipart/form-data" method="post">
                     @csrf
                     @method('patch')
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
-                            <p class="my-0">Judul Meal Plan</p>
+                            <p class="my-0">Judul Resep Makanan</p>
                             <p class="small text-danger mb-2">*required</p>
                         </div>
                         <div class="col-md-9 col-sm-12 px-0">
@@ -49,13 +49,13 @@
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
                             <p class="my-0">Upload Foto Cover</p>
-                            <p class="small text-danger mb-2">Ekstensi file .png & .jpg</p>
+                            <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
                             <input class="custom-file-input" type="file" id="file_cover" name="file_cover"
                                 accept=".png,.jpg">
                             <label class="custom-file-label" for="file_cover">{{ $recipe->photo }}</label>
-                            @error('file_cover')
+                            @error('file-cover')
                                 <div class="small text-danger">
                                     {{ $message }}
                                 </div>
@@ -65,13 +65,13 @@
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
                             <p class="my-0">Upload Foto Poster</p>
-                            <p class="small text-danger mb-2">Ekstensi file .png & .jpg</p>
+                            <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
                             <input class="custom-file-input" type="file" id="file_poster" name="file_poster"
                                 accept=".png,.jpg">
-                            <label class="custom-file-label" for="file_poster">{{ $recipe->poster }}</label>
-                            @error('file_poster')
+                            <label class="custom-file-label" for="file-poster">{{ $recipe->poster }}</label>
+                            @error('file-poster')
                                 <div class="small text-danger">
                                     {{ $message }}
                                 </div>
