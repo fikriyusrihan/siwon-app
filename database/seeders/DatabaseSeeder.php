@@ -14,10 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User Factory
-        \App\Models\User::factory(1)->admin()->create();
-        \App\Models\User::factory(4)->create();
-
         // Workout Category Seeder
         \App\Models\WorkoutCategory::create([
             'title' => 'Easy',
