@@ -46,7 +46,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::resource('dashboard/suggestions', SuggestionController::class)->middleware('auth', 'admin');
 
 // Resep Makanan Page
-Route::resource('dashboard/foodrecipes', AdminFoodRecipeController::class)->middleware('auth', 'admin');
+Route::resource('dashboard/foodrecipe', AdminFoodRecipeController::class)->middleware('auth', 'admin');
 
 // Meal Plan Page
-Route::resource('dashboard/mealplans', AdminMealPlanController::class)->middleware('admin', 'auth');
+Route::resource('dashboard/mealplan', AdminMealPlanController::class)->middleware('admin', 'auth');

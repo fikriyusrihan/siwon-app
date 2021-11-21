@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\FoodRecipe;
-use Illuminate\Http\Request;
 use App\Models\Suggestion;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminFoodRecipeController extends Controller
 {
@@ -15,7 +16,6 @@ class AdminFoodRecipeController extends Controller
      */
     public function index()
     {
-
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
         $recipes = FoodRecipe::all()->sortByDesc('created_at');
 
@@ -58,8 +58,8 @@ class AdminFoodRecipeController extends Controller
         ]);
 
         $fileName = time() . '.' . $request->file('file-poster')->extension();
-        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
         $request->file('file-cover')->move(public_path('assets/images/foodrecipe/cover'), $fileName);
+        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
 
         $save = new FoodRecipe();
 
@@ -75,16 +75,16 @@ class AdminFoodRecipeController extends Controller
             'poster' => $save->poster,
         ]);
 
-        return redirect('dashboard/foodrecipes');
+        return redirect('dashboard/foodrecipe');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\FoodRecipe  $foodRecipe
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(FoodRecipe $foodrecipe)
     {
         //
     }
@@ -92,18 +92,17 @@ class AdminFoodRecipeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\FoodRecipe  $foodRecipe
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FoodRecipe $foodrecipe)
     {
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
-        $recipe = FoodRecipe::find($id);
 
-        return view('dashboard.mealplans.edit', [
+        return view('dashboard.recipe.edit', [
             'active' => 'recipe',
             'messages' => $messages,
-            'recipe' => $recipe,
+            'recipe' => $foodrecipe,
         ]);
     }
 
@@ -111,49 +110,75 @@ class AdminFoodRecipeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\FoodRecipe  $foodRecipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, FoodRecipe $foodrecipe)
     {
-        $validatedData = $request->validate([
+        // Create validation rules
+        $rules = [
             'name' => 'required',
-            'slug' => 'required',
-        ]);
+        ];
 
-        
-        $fileName = time() . '.' . $request->file('file-poster')->extension();
-        $request->file('file-poster')->move(public_path('assets/images/foodrecipe/poster'), $fileName);
-        $request->file('file-cover')->move(public_path('assets/images/foodrecipe/cover'), $fileName);
-        
+        if ($request->slug != $foodrecipe->slug) {
+            $rules['slug'] = 'required|unique:food_recipes,slug';
+        }
 
-        $save = new FoodRecipe();
+        if ($request->file_cover != null) {
+            $rules['file_cover'] = 'required|max:2048';
+        }
 
-        $save->name = $validatedData['name'];
-        $save->slug = $validatedData['slug'];
-        $save->photo = $fileName;
-        $save->poster = $fileName;
+        if ($request->file_poster != null) {
+            $rules['file_poster'] = 'required|max:2048';
+        }
 
-        FoodRecipe::create([
-            'name' => $save->name,
-            'slug' => $save->slug,
-            'photo' => $save->photo,
-            'poster' => $save->poster,
-        ]);
+        $validatedData = $request->validate($rules);
+        $updateField['name'] = $validatedData['name'];
 
-        return redirect('dashboard/foodrecipes');
+        if ($request->slug != $foodrecipe->slug) {
+            $updateField['slug'] = $request->slug;
+        }
+
+        if ($request->file_cover != null) {
+            $fileNameCover = time() . '.' . $request->file('file_cover')->extension();
+            $request->file('file_cover')->move(public_path('assets/images/foodrecipe/cover'), $fileNameCover);
+
+            $oldCoverPath = public_path('assets/images/foodrecipe/cover/') . $foodrecipe->photo;
+            File::delete($oldCoverPath);
+
+            $updateField['photo'] = $fileNameCover;
+        }
+
+        if ($request->file_poster != null) {
+            $fileNamePoster = time() . '.' . $request->file('file_poster')->extension();
+            $request->file('file_poster')->move(public_path('assets/images/foodrecipe/poster'), $fileNamePoster);
+
+            $oldPosterPath = public_path('assets/images/foodrecipe/poster/') . $foodrecipe->poster;
+            File::delete($oldPosterPath);
+
+            $updateField['poster'] = $fileNamePoster;
+        }
+
+        FoodRecipe::where('id', $foodrecipe->id)
+            ->update($updateField);
+
+        return redirect('dashboard/foodrecipe');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\FoodRecipe  $foodRecipe
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(FoodRecipe $foodrecipe)
     {
-        FoodRecipe::destroy($id);
+        $coverPath = public_path('assets/images/foodrecipe/cover/') . $foodrecipe->photo;
+        $posterPath = public_path('assets/images/foodrecipe/poster/') . $foodrecipe->poster;
+        File::delete($coverPath, $posterPath);
 
-        return redirect('dashboard/foodrecipes');
+        FoodRecipe::destroy($foodrecipe->id);
+
+        return redirect('dashboard/foodrecipe');
     }
 }

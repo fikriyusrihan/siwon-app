@@ -56,14 +56,14 @@
 
     <!-- Nav Item -->
     <li class="nav-item @if ($active == 'mealplan'){{ 'active' }}@endif">
-        <a class="nav-link" href="/dashboard/mealplans">
+        <a class="nav-link" href="/dashboard/mealplan">
             <i class="fas fa-calendar-alt"></i>
             <span>Meal Plan</span></a>
     </li>
 
     <!-- Nav Item -->
     <li class="nav-item @if ($active == 'recipe'){{ 'active' }}@endif">
-        <a class="nav-link" href="/dashboard/foodrecipes">
+        <a class="nav-link" href="/dashboard/foodrecipe">
             <i class="fas fa-scroll"></i>
             <span>Resep Makanan</span></a>
     </li>

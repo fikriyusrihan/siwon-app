@@ -6,23 +6,24 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Resep Makanan</h1>
-        <p class="mb-4">Menambahkan data resep makanan baru.</p>
+        <p class="mb-4">Memperbarui data resep makanan baru.</p>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Resep Makanan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Update Resep Makanan</h6>
             </div>
             <div class="card-body px-lg-5">
-                <form action="/dashboard/foodrecipe" enctype="multipart/form-data" method="post">
+                <form action="/dashboard/foodrecipe/{{ $recipe->slug }}" enctype="multipart/form-data" method="post">
                     @csrf
+                    @method('patch')
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
                             <p class="my-0">Judul Resep Makanan</p>
                             <p class="small text-danger mb-2">*required</p>
                         </div>
-                        <div class="col-md-9 col-sm-12 px-2">
+                        <div class="col-md-9 col-sm-12 px-0">
                             <input class="form-control form-control-user" type="text" id="name" name="name"
-                                value="{{ old('name') }}">
+                                value="{{ $recipe->name }}">
                             @error('name')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -35,9 +36,9 @@
                             <p class="my-0">Slug</p>
                             <p class="small text-danger mb-2">*autofill</p>
                         </div>
-                        <div class="col-md-9 col-sm-12 px-2">
+                        <div class="col-md-9 col-sm-12 px-0">
                             <input class="form-control form-control-user" type="text" id="slug" name="slug"
-                                value="{{ old('slug') }}">
+                                value="{{ $recipe->slug }}">
                             @error('slug')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -50,10 +51,10 @@
                             <p class="my-0">Upload Foto Cover</p>
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
-                        <div class="col-md-9 col-sm-12 custom-file px-2">
-                            <input class="custom-file-input" type="file" id="file-cover" name="file-cover"
+                        <div class="col-md-9 col-sm-12 custom-file">
+                            <input class="custom-file-input" type="file" id="file_cover" name="file_cover"
                                 accept=".png,.jpg">
-                            <label class="custom-file-label" for="file-cover">Pilih file yang akan diupload</label>
+                            <label class="custom-file-label" for="file_cover">{{ $recipe->photo }}</label>
                             @error('file-cover')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -67,9 +68,9 @@
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>
                         <div class="col-md-9 col-sm-12 custom-file">
-                            <input class="custom-file-input" type="file" id="file-poster" name="file-poster"
+                            <input class="custom-file-input" type="file" id="file_poster" name="file_poster"
                                 accept=".png,.jpg">
-                            <label class="custom-file-label" for="file-poster">Pilih file yang akan diupload</label>
+                            <label class="custom-file-label" for="file-poster">{{ $recipe->poster }}</label>
                             @error('file-poster')
                                 <div class="small text-danger">
                                     {{ $message }}
@@ -77,7 +78,7 @@
                             @enderror
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Tambah</button>
+                    <button class="btn btn-primary" type="submit">Simpan</button>
                 </form>
             </div>
         </div>
@@ -85,7 +86,6 @@
     </div>
     <!-- /.container-fluid -->
 @endsection
-
 
 @section('script')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -106,7 +106,7 @@
         }
 
         // Print name file in cover form
-        $('#file-cover').on('change', function() {
+        $('#file_cover').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
@@ -114,7 +114,7 @@
         })
 
         // Print name file in poster form
-        $('#file-poster').on('change', function() {
+        $('#file_poster').on('change', function() {
             //get the file name
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             //replace the "Choose a file" label
