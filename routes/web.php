@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminFoodRecipeController;
 use App\Http\Controllers\AdminMealPlanController;
+use App\Http\Controllers\AdminProgramController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -50,3 +51,6 @@ Route::resource('dashboard/foodrecipe', AdminFoodRecipeController::class)->middl
 
 // Meal Plan Page
 Route::resource('dashboard/mealplan', AdminMealPlanController::class)->middleware('admin', 'auth');
+
+// Program Page
+Route::resource('dashboard/program', AdminProgramController::class)->middleware('admin', 'auth');

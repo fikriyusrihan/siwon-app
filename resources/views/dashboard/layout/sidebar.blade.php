@@ -41,7 +41,7 @@
 
     <!-- Nav Item -->
     <li class="nav-item">
-        <a class="nav-link" href="/dashboard/programs">
+        <a class="nav-link" href="/dashboard/program">
             <i class="fas fa-fw fa-calendar-minus"></i>
             <span>Programs</span></a>
     </li>
