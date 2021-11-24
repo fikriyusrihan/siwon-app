@@ -35,13 +35,15 @@
                 <div class="row">
                     @foreach ($programs as $program)
                         <div class="col-lg-6 col-sm-12 mb-3">
-                            <div class="programs-card p-5 mb-3 rounded"
-                                style="background-image: url('{{ asset('assets/images/program/cover/' . $program->photo) }}');">
-                                <div class="layer p-5 rounded">
-                                    <p class="mb-1">Programs</p>
-                                    <h4 class="fw-bold">{{ $program->name }}</h4>
+                            <a href="/programs/{{ $program->slug }}">
+                                <div class="programs-card p-5 mb-3 rounded"
+                                    style="background-image: url('{{ asset('assets/images/program/cover/' . $program->photo) }}');">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Programs</p>
+                                        <h4 class="fw-bold">{{ $program->name }}</h4>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -107,13 +109,15 @@
                 <div class="row">
                     @foreach ($mealplans as $mealplan)
                         <div class="col-lg-6 col-sm-12 mb-3">
-                            <div class="programs-card p-5 mb-3 rounded"
-                                style="background-image: url({{ asset('assets/images/foodrecipe/cover/' . $mealplan->photo) }});">
-                                <div class="layer p-5 rounded">
-                                    <p class="mb-1">Healthy Foods</p>
-                                    <h4 class="fw-bold">{{ $mealplan->name }}</h4>
+                            <a href="/foodrecipe/{{ $mealplan->slug }}">
+                                <div class="programs-card p-5 mb-3 rounded"
+                                    style="background-image: url({{ asset('assets/images/foodrecipe/cover/' . $mealplan->photo) }});">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Healthy Foods</p>
+                                        <h4 class="fw-bold">{{ $mealplan->name }}</h4>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
