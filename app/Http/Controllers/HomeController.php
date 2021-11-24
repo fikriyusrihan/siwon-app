@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FoodRecipe;
+use App\Models\MealPlan;
+use App\Models\Program;
 use Illuminate\Http\Request;
 use App\Models\Suggestion;
 
@@ -15,7 +18,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $programs = Program::all('name', 'photo')->sortByDesc('created_at')->take(4);
+        $recipes = FoodRecipe::all('name', 'photo')->sortByDesc('created_at')->take(4);
+
+        return view('home', [
+            'programs' => $programs,
+            'mealplans' => $recipes,
+        ]);
     }
 
 
