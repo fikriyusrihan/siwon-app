@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $active = '';
+        $active = 'home';
         $programs = Program::all('name', 'photo', 'slug')->sortByDesc('created_at')->take(4);
         $recipes = FoodRecipe::all('name', 'photo', 'slug')->sortByDesc('created_at')->take(4);
 

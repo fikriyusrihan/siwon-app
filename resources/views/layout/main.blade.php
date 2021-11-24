@@ -40,6 +40,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link @if ($active == 'home') active @endif" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link @if ($active == 'programs') active @endif" href="/programs">Programs</a>
                     </li>
                     <li class="nav-item">

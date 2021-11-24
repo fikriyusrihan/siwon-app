@@ -5,6 +5,10 @@ body {
 .navbar {
     background-color: white;
 }
+.active {
+    color: #bb2d3b !important;
+    text-decoration: underline;
+}
 .brand {
     font-family: "Satisfy", cursive;
     font-size: larger;
