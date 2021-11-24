@@ -35,7 +35,6 @@ class AdminProgramController extends Controller
      */
     public function create()
     {
-
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
         $categories = ProgramCategory::all();
 
