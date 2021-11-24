@@ -3,7 +3,7 @@
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">
-        <div class="jumbotron py-5">
+        <div class="jumbotron py-5" style="background-image: url({{ asset('assets/images/homepage-jumbotron-1x.png') }});">
             <div class="container py-5">
                 <div class="col-lg-6 col-12">
                     <div class="p-4 p-lg-5 bg-white rounded text-md-start text-sm-center">
@@ -33,38 +33,19 @@
             </div>
             <div class="featured-card mt-4">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/programs/programs-1.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Programs</p>
-                                <h4 class="fw-bold">Daily Routine Excercise</h4>
-                            </div>
+                    @foreach ($programs as $program)
+                        <div class="col-lg-6 col-sm-12 mb-3">
+                            <a href="/programs/{{ $program->slug }}">
+                                <div class="programs-card p-5 mb-3 rounded"
+                                    style="background-image: url('{{ asset('assets/images/program/cover/' . $program->photo) }}');">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Programs</p>
+                                        <h4 class="fw-bold">{{ $program->name }}</h4>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="programs-card py-5 rounded"
-                            style="background-image: url('assets/images/programs/programs-2.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Programs</p>
-                                <h4 class="fw-bold">Intense Fat Burning</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/programs/programs-3.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Programs</p>
-                                <h4 class="fw-bold">Beginner Workout Excercise</h4>
-                            </div>
-                        </div>
-                        <div class="programs-card p-5 rounded"
-                            style="background-image: url('assets/images/programs/programs-4.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Programs</p>
-                                <h4 class="fw-bold">7 Days of Cardio</h4>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -126,38 +107,19 @@
             </div>
             <div class="featured-card mt-4">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/healthy_foods/foods-1.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Salmon Steak</h4>
-                            </div>
+                    @foreach ($mealplans as $mealplan)
+                        <div class="col-lg-6 col-sm-12 mb-3">
+                            <a href="/foodrecipe/{{ $mealplan->slug }}">
+                                <div class="programs-card p-5 mb-3 rounded"
+                                    style="background-image: url({{ asset('assets/images/foodrecipe/cover/' . $mealplan->photo) }});">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Healthy Foods</p>
+                                        <h4 class="fw-bold">{{ $mealplan->name }}</h4>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="programs-card py-5 rounded"
-                            style="background-image: url('assets/images/healthy_foods/foods-2.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Heavenly Beans</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/healthy_foods/foods-3.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Avocado Toast</h4>
-                            </div>
-                        </div>
-                        <div class="programs-card p-5 rounded"
-                            style="background-image: url('assets/images/healthy_foods/foods-4.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Berries Smoothie</h4>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

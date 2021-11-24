@@ -1,49 +1,52 @@
 body {
     font-family: "Open Sans", sans-serif;
     background-color: #fafafa;
-  }
-  .navbar {
+}
+.navbar {
     background-color: white;
-  }
-  .brand {
+}
+.active {
+    color: #bb2d3b !important;
+    text-decoration: underline;
+}
+.brand {
     font-family: "Satisfy", cursive;
     font-size: larger;
     text-decoration: none;
     color: black;
-  }
-  .brand:hover {
+}
+.brand:hover {
     color: black;
-  }
-  .navbar .nav-item {
+}
+.navbar .nav-item {
     padding-left: 16px;
-  }
-  .jumbotron {
+}
+.jumbotron {
     font-family: "Open Sans", sans-serif;
-    background-image: url("../images/homepage-jumbotron-1x.png");
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .jumbotron .header {
+}
+.jumbotron .header {
     font-weight: bold;
     margin-bottom: 16px;
-  }
-  .menu-section {
+}
+.menu-section {
     margin-top: 80px;
-  }
-  .content-header {
+}
+.content-header {
     font-weight: 700;
     margin-bottom: 16px;
-  }
-  .featured-card {
+}
+.featured-card {
     font-family: "Roboto", sans-serif;
-  }
-  .featured-card .programs-card {
+}
+.featured-card .programs-card {
     background-repeat: no-repeat;
     background-size: cover;
     height: 148px;
     position: relative;
-  }
-  .layer {
+}
+.layer {
     background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     color: white;
@@ -51,26 +54,37 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-  }
-  .footer {
+}
+.footer {
     font-family: "Roboto", sans-serif;
     background-color: white;
-  }
-  .footer h6 {
+}
+.footer h6 {
     font-weight: bold;
     font-size: large;
-  }
-  .footer ul {
+}
+.footer ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  .footer ul li a {
+}
+.footer ul li a {
     color: rgb(82, 82, 82);
     font-size: 15px;
     text-decoration: none;
-  }
-  .footer ul li a:hover {
+}
+.footer ul li a:hover {
     color: rgb(17, 17, 17);
-  }
-  
+}
+
+/* Program Page */
+.category-card {
+    font-family: "Roboto", sans-serif;
+}
+.category-card a {
+    text-decoration: none;
+    color: rgb(88, 88, 88);
+}
+.category-card a:hover {
+    color: black;
+}

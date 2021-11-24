@@ -3,7 +3,7 @@
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">
-        <div class="jumbotron py-5">
+        <div class="jumbotron py-5" style="background-image: url({{ asset('assets/images/homepage-jumbotron-1x.png') }});">
             <div class="container py-5">
                 <div class="col-lg-6 col-12">
                     <div class="p-4 p-lg-5 bg-white rounded text-md-start text-sm-center">
