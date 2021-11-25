@@ -22,8 +22,8 @@ class ProgramCategory extends Model
     /**
      * Get the program associated with the category.
      */
-    public function category()
+    public function programs()
     {
-        return $this->hasMany(Program::class);
+        return $this->hasMany(Program::class, 'category_id');
     }
 }

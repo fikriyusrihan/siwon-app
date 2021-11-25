@@ -34,7 +34,7 @@
             <div class="category-card mt-4">
                 <div class="row mt-3 mb-5">
                     <div class="col-lg-4 col-12">
-                        <a href="/programs/beginner">
+                        <a href="/programs/categories/1">
                             <div class="category-card text-center">
                                 <img src="{{ asset('assets/images/program/homepage_beginner.png') }}" alt=""
                                     width="100%" />
@@ -47,7 +47,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-12">
-                        <a href="/programs/intermediate">
+                        <a href="/programs/categories/2">
                             <div class="category-card text-center">
                                 <img src="{{ asset('assets/images/program/homepage_intermediate.png') }}" alt=""
                                     width="100%" />
@@ -60,9 +60,10 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-12">
-                        <a href="/programs/advanced">
+                        <a href="/programs/categories/3">
                             <div class="category-card text-center">
-                                <img src="{{ asset('assets/images/program/homepage_advanced.png') }}" alt="" width="100%" />
+                                <img src="{{ asset('assets/images/program/homepage_advanced.png') }}" alt=""
+                                    width="100%" />
                                 <h4 class="mt-4">Advanced</h4>
                                 <p class="mt-4">
                                     Program tiga bulan yang akan membantumu berolahraga ringan

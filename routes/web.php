@@ -27,6 +27,7 @@ Route::post('/', [HomeController::class, 'store']);
 
 // Programs
 Route::get('/programs', [ProgramsController::class, 'index']);
+Route::get('/programs/categories/{category}', [ProgramsController::class, 'category']);
 
 // Auth (Login)
 Route::get('/auth/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
