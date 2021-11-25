@@ -58,7 +58,7 @@ class AdminProgramController extends Controller
             'slug' => 'required|unique:programs,slug',
             'category' => 'required',
             'description' => 'required',
-            'file_cover' => 'required|max:2048',
+            'file_cover' => 'required|max:4096',
             'file_poster' => 'required|max:2048',
         ]);
 
@@ -132,7 +132,7 @@ class AdminProgramController extends Controller
         }
 
         if ($request->file_cover != null) {
-            $rules['file_cover'] = 'required|max:2048';
+            $rules['file_cover'] = 'required|max:4096';
         }
 
         if ($request->file_poster != null) {
@@ -142,6 +142,7 @@ class AdminProgramController extends Controller
         $validatedData = $request->validate($rules);
         $updateField['name'] = $validatedData['name'];
         $updateField['description'] = $validatedData['description'];
+        $updateField['category_id'] = $validatedData['category'];
 
         if ($request->slug != $program->slug) {
             $updateField['slug'] = $validatedData['slug'];

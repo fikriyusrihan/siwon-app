@@ -6,10 +6,9 @@
         <!-- Programs -->
         <div class="menu-section row">
             <div class="description col-lg-6 col-sm-12 ps-4">
-                <h3 class="content-header mt-5">Program 1 Minggu</h3>
+                <h3 class="content-header mt-5">{{ $data['title'] }}</h3>
                 <p class="content-description">
-                    Ikut berbagai program olahraga yang dapat dilakukan di manapun
-                    dengan durasi latihan selama satu minggu.
+                    {{ $data['description'] }}
                 </p>
             </div>
             <div class="featured-card mt-5">
@@ -23,12 +22,29 @@
                                 <div></div>
                                 <img class="mt-auto"
                                     src="{{ asset('assets/images/program/poster/' . $program->poster) }}" alt=""
-                                    width="50%" height="200px" style="background-size: cover" />
+                                    width="50%" height="220px" style="background-size: cover" />
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
         </div>
+        <!-- Pagination -->
+        <nav aria-label="pagination" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link">
+                        << </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"> >> </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 @endsection
