@@ -61,3 +61,41 @@ Route::resource('dashboard/mealplan', AdminMealPlanController::class)->middlewar
 
 // Program Page
 Route::resource('dashboard/program', AdminProgramController::class)->middleware('admin', 'auth');
+
+
+// Articles
+Route::get('article/perkenalan', function () {
+    return view('article/perkenalan', [
+        'active' => '',
+    ]);
+});
+
+Route::get('article/select-program', function () {
+    return view('article/select-programs', [
+        'active' => '',
+    ]);
+});
+
+Route::get('article/select-workout', function () {
+    return view('article/select-workout', [
+        'active' => '',
+    ]);
+});
+
+Route::get('article/food-recipes', function () {
+    return view('article/food-recipes', [
+        'active' => '',
+    ]);
+});
+
+Route::get('article/meal-plan', function () {
+    return view('article/meal-plan', [
+        'active' => '',
+    ]);
+});
+
+Route::get('article/suggestion', function () {
+    return view('article/suggestion', [
+        'active' => '',
+    ]);
+});

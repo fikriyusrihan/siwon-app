@@ -94,30 +94,28 @@
                 <div class="col-lg-3 col-sm-12 mb-4">
                     <h6>Get Started</h6>
                     <ul>
-                        <li><a href="">Perkenalan</a></li>
-                        <li><a href="">Pemanasan dan Peregangan</a></li>
-                        <li><a href="">Memilih Program</a></li>
-                        <li><a href="">Rencana Latihan</a></li>
-                        <li><a href="">Memilih Resep Makanan</a></li>
-                        <li><a href="">Memilih Meal Plan</a></li>
-                        <li><a href="">Saran dan Masukan</a></li>
+                        <li><a href="/article/perkenalan">Perkenalan</a></li>
+                        <li><a href="/article/select-program">Memilih Program</a></li>
+                        <li><a href="/article/select-workout">Memilih Workout</a></li>
+                        <li><a href="/article/food-recipes">Memilih Resep Makanan</a></li>
+                        <li><a href="/article/meal-plan">Memilih Meal Plan</a></li>
+                        <li><a href="/article/suggestion">Saran dan Masukan</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-12 mb-4">
                     <h6>Fitur & Kategori</h6>
                     <ul>
-                        <li><a href="">Program</a></li>
-                        <li><a href="">Workout</a></li>
-                        <li><a href="">Healthy Foods</a></li>
-                        <li><a href="">Unduh Poster</a></li>
+                        <li><a href="/programs" target="_blank">Program</a></li>
+                        <li><a href="/workout" target="_blank">Workout</a></li>
+                        <li><a href="/healthy-foods" target="_blank">Healthy Foods</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-sm-12">
                     <h6>Sosial Media</h6>
                     <ul>
-                        <li><a href="">Instagram</a></li>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
                     </ul>
                 </div>
             </div>
