@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Program;
 use App\Models\ProgramCategory;
 use Illuminate\Http\Request;
 
@@ -41,5 +42,9 @@ class ProgramsController extends Controller
             'data' => $data[$category->id],
             'programs' => $programs,
         ]);
+    }
+
+    public function show(Program $program) {
+        dd($program);
     }
 }

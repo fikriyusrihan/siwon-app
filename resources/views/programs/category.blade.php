@@ -15,15 +15,17 @@
                 <div class="row align-items-end">
                     @foreach ($programs as $program)
                         <div class="col-lg-4 col-12 mb-5">
-                            <div class="category-card text-center">
-                                <h6 class="p-2 w-50 mx-auto border border-5">
-                                    {{ $program->name }}
-                                </h6>
-                                <div></div>
-                                <img class="mt-auto"
-                                    src="{{ asset('assets/images/program/poster/' . $program->poster) }}" alt=""
-                                    width="50%" height="220px" style="background-size: cover" />
-                            </div>
+                            <a href="/programs/{{ $program->slug }}" style="text-decoration: none; color: black;">
+                                <div class="category-card text-center">
+                                    <h6 class="p-2 w-50 mx-auto border border-5">
+                                        {{ $program->name }}
+                                    </h6>
+                                    <div></div>
+                                    <img class="mt-auto"
+                                        src="{{ asset('assets/images/program/poster/' . $program->poster) }}" alt=""
+                                        width="50%" height="220px" style="background-size: cover" />
+                                </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
