@@ -21,7 +21,7 @@ class ProgramsController extends Controller
     public function category(ProgramCategory $category)
     {
 
-        $programs = ProgramCategory::find($category->id)->programs;
+        $programs = ProgramCategory::find($category->id)->programs;        
         $data = [
             1 => [
                 'title' => 'Program 1 Minggu',
@@ -45,6 +45,11 @@ class ProgramsController extends Controller
     }
 
     public function show(Program $program) {
-        dd($program);
+        $active = 'programs';
+
+        return view('programs.detail', [
+            'program' => $program,
+            'active' => $active,
+        ]);
     }
 }
