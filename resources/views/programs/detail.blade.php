@@ -8,7 +8,7 @@
         <div class="menu-section row">
             <div class="featured-card">
                 <div class="row justify-content-center">
-                    <div class="col-lg-4 col-12">
+                    <div class="col-lg-10 col-12">
                         <div class="category-card mt-5">
                             <img src="{{ asset('assets/images/program/poster/' . $program->poster) }}" alt=""
                                 width="100%" />
