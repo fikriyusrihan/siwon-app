@@ -43,7 +43,7 @@ class WorkoutController extends Controller
         return view('workout.category', [
             'active' => 'workout',
             'data' => $data[$category->id],
-            'workout' => $workout,
+            'workouts' => $workout,
         ]);
     }
 

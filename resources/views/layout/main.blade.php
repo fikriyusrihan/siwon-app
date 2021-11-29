@@ -45,7 +45,7 @@
                     <li class="nav-item">
                         <a class="nav-link @if ($active == 'programs') active @endif" href="/programs">Programs</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ Request::is('workout') ? 'active' : '' }}">
                         <a class="nav-link" href="/workout">Workout</a>
                     </li>
                     <li class="nav-item">

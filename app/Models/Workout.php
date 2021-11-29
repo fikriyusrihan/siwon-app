@@ -29,7 +29,7 @@ class Workout extends Model
     }
 
     /**
-     * Get the category that owns the program
+     * Get the category that owns the workout
      */
     public function category()
     {
