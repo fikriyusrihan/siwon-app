@@ -18,10 +18,18 @@ class HealthyFoodController extends Controller
     {
 
         $recipes = FoodRecipe::paginate(6);
-        
+
         return view('healthyfoods.recipe', [
             'active' => 'healthy_foods',
             'recipes' => $recipes,
+        ]);
+    }
+
+    public function show_recipe(FoodRecipe $foodrecipe)
+    {   
+        return view('healthyfoods.recipe_detail', [
+            'active' => 'healthy_foods',
+            'recipe' => $foodrecipe,
         ]);
     }
 }
