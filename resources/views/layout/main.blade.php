@@ -49,7 +49,7 @@
                         <a class="nav-link" href="/workout">Workout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/healthy-foods">Healthy Foods</a>
+                        <a class="nav-link @if ($active == 'healthy_foods') active @endif" href="/healthy-foods">Healthy Foods</a>
                     </li>
                     @auth
                         <li class="nav-item dropdown">

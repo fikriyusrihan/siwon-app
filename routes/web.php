@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminFoodRecipeController;
 use App\Http\Controllers\AdminMealPlanController;
 use App\Http\Controllers\AdminProgramController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HealthyFoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProgramsController;
@@ -29,6 +30,9 @@ Route::post('/', [HomeController::class, 'store']);
 Route::get('/programs', [ProgramsController::class, 'index']);
 Route::get('/programs/categories/{category}', [ProgramsController::class, 'category']);
 Route::get('/programs/{program}', [ProgramsController::class, 'show']);
+
+// HealthyFoods
+Route::get('/healthy-foods', [HealthyFoodController::class, 'index']);
 
 // Auth (Login)
 Route::get('/auth/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

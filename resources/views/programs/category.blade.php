@@ -1,16 +1,27 @@
 @extends('layout.main')
 
 @section('content')
+    <!-- Jumbotron -->
+    <div class="row mt-5">
+        <div class="jumbotron py-5" style="background-image: url({{ asset('assets/images/homepage-programs.png') }});">
+            <div class="container py-5">
+                <div class="col-lg-6 col-12">
+                    <div class="p-4 p-lg-5 bg-white rounded text-md-start text-sm-center">
+                        <h1 class="header">{{ $data['title'] }}</h1>
+                        <p>
+                            {{ $data['description'] }}
+                        </p>
+                        <a class="btn btn-danger" href="#main-content">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Content -->
     <div id="main-content" class="container">
         <!-- Programs -->
         <div class="menu-section row">
-            <div class="description col-lg-6 col-sm-12 ps-4">
-                <h3 class="content-header mt-5">{{ $data['title'] }}</h3>
-                <p class="content-description">
-                    {{ $data['description'] }}
-                </p>
-            </div>
             <div class="featured-card mt-5">
                 <div class="row align-items-end">
                     @foreach ($programs as $program)
@@ -32,21 +43,8 @@
             </div>
         </div>
         <!-- Pagination -->
-        <nav aria-label="pagination" class="mt-5">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">
-                        << </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#"> >> </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="d-flex justify-content-center">
+            {!! $programs->links() !!}
+        </div>
     </div>
 @endsection
