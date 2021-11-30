@@ -40,6 +40,9 @@ Route::get('/workout/{workout}', [WorkoutController::class, 'show']);
 // HealthyFoods
 Route::get('/healthy-foods', [HealthyFoodController::class, 'index']);
 
+// FoodRecipe
+Route::get('/food-recipes', [HealthyFoodController::class, 'foodrecipe']);
+
 // Auth (Login)
 Route::get('/auth/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/auth/login', [LoginController::class, 'authenticate']);
