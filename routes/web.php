@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SuggestionController;
+use App\Http\Controllers\WorkoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,11 @@ Route::post('/', [HomeController::class, 'store']);
 Route::get('/programs', [ProgramsController::class, 'index']);
 Route::get('/programs/categories/{category}', [ProgramsController::class, 'category']);
 Route::get('/programs/{program}', [ProgramsController::class, 'show']);
+
+// Workout
+Route::get('/workout', [WorkoutController::class, 'index']);
+Route::get('/workout/categories/{category}', [WorkoutController::class, 'category']);
+Route::get('/workout/{workout}', [WorkoutController::class, 'show']);
 
 // HealthyFoods
 Route::get('/healthy-foods', [HealthyFoodController::class, 'index']);
