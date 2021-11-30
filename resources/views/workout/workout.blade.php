@@ -3,7 +3,8 @@
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">
-        <div class="jumbotron py-5" style="background-image: url({{ asset('assets/images/workout/homepage/homepage_top.png') }});">
+        <div class="jumbotron py-5"
+            style="background-image: url({{ asset('assets/images/workout/homepage/homepage_top.png') }});">
             <div class="container py-5">
                 <div class="col-lg-6 col-12">
                     <div class="p-4 p-lg-5 bg-white rounded text-md-start text-sm-center">
@@ -35,14 +36,10 @@
                             <div class="category-card text-center">
                                 <h4 class="mt-4">Easy</h4>
                                 <p class="mt-4">
-                                  Workout ringan yang anda 
-                                  <br>dapat lakukan dimana saja
+                                    Workout ringan yang anda
+                                    <br>dapat lakukan dimana saja
                                 </p>
-                                <img
-                                  src="assets/images/workout/homepage/homepage_easy.png"
-                                  alt=""
-                                  width="50%"
-                                />
+                                <img src="assets/images/workout/homepage/homepage_easy.png" alt="" width="50%" />
                             </div>
                         </a>
                     </div>
@@ -51,14 +48,11 @@
                             <div class="category-card text-center">
                                 <h4 class="mt-4">Medium</h4>
                                 <p class="mt-4">
-                                  Workout sedang yang anda 
-                                  <br>dapat lakukan dimana saja
+                                    Workout sedang yang anda
+                                    <br>dapat lakukan dimana saja
                                 </p>
-                                <img
-                                  src={{ asset("assets/images/workout/homepage/homepage_medium.png") }}
-                                  alt=""
-                                  width="50%"
-                                />
+                                <img src={{ asset('assets/images/workout/homepage/homepage_medium.png') }} alt=""
+                                    width="50%" />
                             </div>
                         </a>
                     </div>
@@ -66,6 +60,7 @@
                         <a href="/programs/categories/3">
                             <div class="category-card text-center">
                                 <h4 class="mt-4">Hard</h4>
+                                <h4 class="mt-4">Advanced</h4>
                                 <p class="mt-4">
                                   Workout sedang yang anda 
                                   <br>dapat lakukan dimana saja

@@ -20,7 +20,7 @@ class WorkoutController extends Controller
 
     public function category(WorkoutCategory $category)
     {
-
+        
         $workout = WorkoutCategory::find($category->id)->workout;
         $data = [
             1 => [

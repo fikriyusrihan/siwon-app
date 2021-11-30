@@ -32,4 +32,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    /**
+     * Get the records associated with the user.
+     */
+    public function records() {
+        return $this->hasMany(Record::class, 'user_id');
+    }
 }
