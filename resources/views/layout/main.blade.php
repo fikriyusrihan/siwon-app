@@ -46,7 +46,7 @@
                         <a class="nav-link @if ($active == 'programs') active @endif" href="/programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/workout">Workout</a>
+                        <a class="nav-link @if ($active == 'workout') active @endif" href="/workout">Workout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/healthy-foods">Healthy Foods</a>

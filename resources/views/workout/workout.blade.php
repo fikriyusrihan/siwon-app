@@ -65,13 +65,16 @@
                     <div class="col-lg-4 col-12">
                         <a href="/programs/categories/3">
                             <div class="category-card text-center">
-                                <img src="{{ asset('assets/images/program/homepage_advanced.png') }}" alt=""
-                                    width="100%" />
-                                <h4 class="mt-4">Advanced</h4>
+                                <h4 class="mt-4">Hard</h4>
                                 <p class="mt-4">
-                                    Program tiga bulan yang akan membantumu berolahraga ringan
-                                    secara teratur
+                                  Workout sedang yang anda 
+                                  <br>dapat lakukan dimana saja
                                 </p>
+                                <img
+                                  src={{ asset("assets/images/workout/homepage/homepage_hard.png") }}
+                                  alt=""
+                                  width="50%"
+                                />
                             </div>
                         </a>
                     </div>
