@@ -53,6 +53,7 @@ class AdminFoodRecipeController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'slug' => 'required|unique:food_recipes,slug',
+            'description' => 'required',
             'file_cover' => 'required|max:2048',
             'file_poster' => 'required|max:2048',
         ]);
@@ -66,6 +67,7 @@ class AdminFoodRecipeController extends Controller
         $recipe = new FoodRecipe();
         $recipe->name = $validatedData['name'];
         $recipe->slug = $validatedData['slug'];
+        $recipe->description = $validatedData['description'];
         $recipe->photo = $coverFileName;
         $recipe->poster = $posterFileName;
 
@@ -114,6 +116,7 @@ class AdminFoodRecipeController extends Controller
         // Create validation rules
         $rules = [
             'name' => 'required',
+            'description' => 'required',
         ];
 
         if ($request->slug != $foodrecipe->slug) {
@@ -130,6 +133,7 @@ class AdminFoodRecipeController extends Controller
 
         $validatedData = $request->validate($rules);
         $updateField['name'] = $validatedData['name'];
+        $updateField['description'] = $validatedData['description'];
 
         if ($request->slug != $foodrecipe->slug) {
             $updateField['slug'] = $request->slug;
