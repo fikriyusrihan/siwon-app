@@ -9,8 +9,11 @@ class HealthyFoodController extends Controller
 {
     public function index()
     {
+        $recipes = FoodRecipe::all('name', 'slug', 'photo', 'created_at')->sortByDesc('created_at')->take(4);
+        
         return view('healthyfoods.index', [
             'active' => 'healthy_foods',
+            'recipes' => $recipes,
         ]);
     }
 
