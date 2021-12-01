@@ -41,6 +41,9 @@
                     @endforeach
                 </div>
             </div>
+            <div class="mt-5 d-flex justify-content-center">
+                {{ $programs->links() }}
+            </div>
         </div>
         <!-- Pagination -->
         <div class="d-flex justify-content-center">

@@ -63,11 +63,11 @@
                 <div class="row">
                     @foreach ($workouts as $workout)
                         <div class="col-lg-6 col-sm-12 mb-3">
-                            <a href="/programs/{{ $workout->slug }}">
+                            <a href="/workout/{{ $workout->slug }}">
                                 <div class="programs-card p-5 mb-3 rounded"
-                                    style="background-image: url('{{ asset('assets/images/program/cover/' . $program->photo) }}');">
+                                    style="background-image: url('{{ asset('assets/images/workout/cover/' . $workout->photo) }}');">
                                     <div class="layer p-5 rounded">
-                                        <p class="mb-1">Programs</p>
+                                        <p class="mb-1">Workout</p>
                                         <h4 class="fw-bold">{{ $workout->name }}</h4>
                                     </div>
                                 </div>
@@ -149,14 +149,14 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         {!! htmlFormSnippet() !!}
                         @error('g-recaptcha-response')
                             <div class="small text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>
+                    </div> --}}
                     <button class="btn btn-danger" type="submit">Kirim</button>
                 </form>
             </div>

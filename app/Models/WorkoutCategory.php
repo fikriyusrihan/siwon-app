@@ -18,4 +18,12 @@ class WorkoutCategory extends Model
         'id',
         'title'
     ];
+
+    /**
+     * Get the workout associated with the category.
+     */
+    public function workout()
+    {
+        return $this->hasMany(Workout::class, 'category_id');
+    }
 }
