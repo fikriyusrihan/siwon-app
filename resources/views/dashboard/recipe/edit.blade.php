@@ -48,6 +48,21 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-3 col-sm-12">
+                            <p class="my-0">Deskripsi</p>
+                            <p class="small text-danger mb-2">*required</p>
+                        </div>
+                        <div class="col-md-9 col-sm-12 px-0">
+                            <textarea class="form-control" name="description" id="description"
+                                rows="5">{{ $recipe->description }}</textarea>
+                            @error('description')
+                                <div class="small text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 col-sm-12">
                             <p class="my-0">Upload Foto Cover</p>
                             <p class="small text-danger mb-2">Ekstensi file .png</p>
                         </div>

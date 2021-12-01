@@ -36,5 +36,4 @@
             {{ $workouts->links() }}
         </div>
     </div>
-
 @endsection

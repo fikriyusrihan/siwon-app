@@ -9,6 +9,7 @@ use App\Models\FoodRecipe;
 use App\Models\Suggestion;
 use Illuminate\Http\Request;
 
+
 class HomeController extends Controller
 {
 
@@ -21,14 +22,14 @@ class HomeController extends Controller
     {
         $active = 'home';
         $programs = Program::all('name', 'photo', 'slug', 'created_at')->sortByDesc('created_at')->take(4);
-        $workout = Workout::all('name', 'photo', 'slug', 'created_at')->sortByDesc('created_at')->take(4);
         $recipes = FoodRecipe::all('name', 'photo', 'slug', 'created_at')->sortByDesc('created_at')->take(4);
+        $workouts = Workout::all('name', 'photo', 'slug', 'created_at')->sortByDesc('created_at')->take(4);
 
         return view('home', [
             'active' => $active,
             'programs' => $programs,
             'mealplans' => $recipes,
-            'workouts' => $workout,
+            'workouts' => $workouts,
         ]);
     }
 

@@ -22,9 +22,6 @@ class WorkoutController extends Controller
     public function category(WorkoutCategory $category)
     {
         $workout = Workout::where('category_id', $category->id)->paginate(6);
-
-        // $workout = WorkoutCategory::find($category->id)->$workouts;
-
         $data = [
             1 => [
                 'title' => 'Easy Workout',

@@ -20,8 +20,7 @@ class ProgramsController extends Controller
 
     public function category(ProgramCategory $category)
     {
-
-        $programs = Program::where('category_id', $category->id)->paginate(9);
+        $programs = Program::where('category_id', '=', $category->id)->paginate(6);        
         $data = [
             1 => [
                 'title' => 'Program 1 Minggu',
@@ -45,6 +44,11 @@ class ProgramsController extends Controller
     }
 
     public function show(Program $program) {
-        dd($program);
+        $active = 'programs';
+
+        return view('programs.detail', [
+            'program' => $program,
+            'active' => $active,
+        ]);
     }
 }
