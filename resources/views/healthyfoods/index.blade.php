@@ -68,46 +68,20 @@
             </div>
             <div class="featured-card mt-4">
                 <div class="row">
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded" style="
-                                      background-image: url('assets/images/healthy_foods/foods-1.png');
-                                    ">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Salmon Steak</h4>
+                    @foreach ($recipes as $recipe)
+                        <a href="/food-recipe/{{ $recipe->slug }}">
+                            <div class="col-lg-3 col-sm-12 mb-3">
+                                <div class="programs-card p-5 mb-3 rounded" style="
+                                                  background-image: url('{{ asset('assets/images/foodrecipe/cover/' . $recipe->photo) }}');
+                                                ">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Healthy Foods</p>
+                                        <h4 class="fw-bold">{{ $recipe->name }}</h4>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="programs-card p-5 rounded" style="
-                                      background-image: url('assets/images/healthy_foods/foods-2.png');
-                                    ">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Heavenly Beans</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="programs-card p-5 rounded" style="
-                                      background-image: url('assets/images/healthy_foods/foods-3.png');
-                                    ">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Avocado Toast</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-12 mb-3">
-                        <div class="programs-card p-5 rounded" style="
-                                      background-image: url('assets/images/healthy_foods/foods-4.png');
-                                    ">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Healthy Foods</p>
-                                <h4 class="fw-bold">Berries Smoothie</h4>
-                            </div>
-                        </div>
-                    </div>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
