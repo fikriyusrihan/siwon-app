@@ -36,6 +36,7 @@ Route::get('/programs/{program}', [ProgramsController::class, 'show']);
 Route::get('/workout', [WorkoutController::class, 'index']);
 Route::get('/workout/categories/{category}', [WorkoutController::class, 'category']);
 Route::get('/workout/{workout}', [WorkoutController::class, 'show']);
+Route::get('/download/{id}', [WorkoutController::class, 'download']);
 
 
 // Auth (Login)

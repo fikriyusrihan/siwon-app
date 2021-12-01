@@ -61,38 +61,19 @@
             </div>
             <div class="featured-card mt-4">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/workout/workout-1.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Workout</p>
-                                <h4 class="fw-bold">Fat Burning Workout</h4>
-                            </div>
+                    @foreach ($workouts as $workout)
+                        <div class="col-lg-6 col-sm-12 mb-3">
+                            <a href="/workout/{{ $workout->slug }}">
+                                <div class="programs-card p-5 mb-3 rounded"
+                                    style="background-image: url('{{ asset('assets/images/workout/cover/' . $workout->photo) }}');">
+                                    <div class="layer p-5 rounded">
+                                        <p class="mb-1">Workout</p>
+                                        <h4 class="fw-bold">{{ $workout->name }}</h4>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="programs-card py-5 rounded"
-                            style="background-image: url('assets/images/workout/workout-2.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Workout</p>
-                                <h4 class="fw-bold">Simple Workout for Arm</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 mb-3">
-                        <div class="programs-card p-5 mb-3 rounded"
-                            style="background-image: url('assets/images/workout/workout-3.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Workout</p>
-                                <h4 class="fw-bold">9 Minutes Workout</h4>
-                            </div>
-                        </div>
-                        <div class="programs-card p-5 rounded"
-                            style="background-image: url('assets/images/workout/workout-4.png');">
-                            <div class="layer p-5 rounded">
-                                <p class="mb-1">Workout</p>
-                                <h4 class="fw-bold">Intense Workout for Thighs and Hips</h4>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

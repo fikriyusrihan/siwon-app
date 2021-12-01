@@ -22,7 +22,7 @@
                                     </h6>
                                     <div></div>
                                     <img class="mt-auto"
-                                        src="{{ asset('assets/images/workout/poster/' . $workout->poster) }}" alt=""
+                                        src="{{ asset('assets/images/workout/cover/' . $workout->photo) }}" alt=""
                                         width="50%" height="220px" style="background-size: cover" />
                                 </div>
                             </a>
@@ -31,22 +31,10 @@
                 </div>
             </div>
         </div>
-        <!-- Pagination -->
-        <nav aria-label="pagination" class="mt-5">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link">
-                        << </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#"> >> </a>
-                </li>
-            </ul>
-        </nav>
+        {{-- Pagination --}}
+        <div class="mt-5 d-flex justify-content-center">
+            {{ $workouts->links() }}
+        </div>
     </div>
+
 @endsection
