@@ -7,20 +7,20 @@
         <p class="category-card text-center mt-5">
             <img src="/assets/images/workout/poster/{{ $workouts->poster }}" alt="" width="60%" class="img1" />
         </p>
-        <div class="category-card mt-5">
-            <label for="minutes">Menit: </label>
-            <input type="number" name="minutes" id="minutes">
-
-            <label for="seconds">Detik: </label>
-            <input type="number" name="seconds" id="seconds">
+        <!--Input timer-->
+        <div class="category-card text-center mt-5">
+            <label for="time">Masukkan waktu timer (menit) : </label>
+            <input type="number" name="time" id="time">
+            <button class="btn btn-primary" class="setButton" >Set Timer</button>
         </div>
         <!--Timer-->
-        <div id="chronoExample" class="category-card d-flex align-items-center mt-3">
-            <div id="showtm" class="fs-1 fw-bold">00:00:00</div><br>
-            <div class="mx-3">
-                <button class="btn btn-success mx-2" onclick="startChr()">Start</button>
-                <button class="btn btn-danger mx-2" onclick="stopChr()">Stop</button>
-                <button class="btn btn-warning mx-2" onclick="resetChr()">Reset</button>
+        <div id="chronoExample" class="category-card text-center mt-3">
+            <div class="values">00:00:00</div><br>
+            <div>
+              <button class="btn btn-success startButton">Start</button>
+              <button class="btn btn-primary pauseButton" >Pause</button>
+              <button class="btn btn-danger stopButton">Stop</button>
+              <button class="btn btn-warning resetButton">Reset</button>
             </div>
         </div>
 
@@ -32,4 +32,63 @@
 
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+    >
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('dist/easytimer.min.js') }}"></script>
+    <script>
+    var timer = new easytimer.Timer();
+    var target_timer = 0;
+    var inputTime = document.getElementById('time');
+    inputTime.onkeyup = function() {
+        target_timer = inputTime.value*60 ;
+        console.log(target_timer);
+    }
+    $('#chronoExample .startButton').click(function () {
+        timer.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: target_timer}});
+    });
+    $('#chronoExample .pauseButton').click(function () {
+        timer.pause();
+    });
+
+    $('#chronoExample .stopButton').click(function () {
+        timer.stop();
+    });
+
+    $('#chronoExample .resetButton').click(function () {
+        timer.reset();
+    });
+
+    timer.addEventListener('secondsUpdated', function (e) {
+        $('#chronoExample .values').html(timer.getTimeValues().toString());
+    });
+
+    timer.addEventListener('started', function (e) {
+        $('#chronoExample .values').html(timer.getTimeValues().toString());
+    });
+
+    timer.addEventListener('reset', function (e) {
+        $('#chronoExample .values').html(timer.getTimeValues().toString());
+    });
+
+    //$('#chronoExample .values').html(timer.getTimeValues().toString());
+
+    timer.addEventListener('secondsUpdated', function (e) {
+        $('#chronoExample .values').html(timer.getTimeValues().toString());
+        $('#chronoExample .progress_bar').html($('#startValuesAndTargetExample .progress_bar').html() + '.');
+    });
+
+    timer.addEventListener('targetAchieved', function (e) {
+        $('#chronoExample .progress_bar').html('COMPLETE!!');
+        timer.stop();
+        alert("Selesai");
+    });
+    </script>
 @endsection
