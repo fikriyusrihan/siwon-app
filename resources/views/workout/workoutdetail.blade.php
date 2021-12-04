@@ -9,10 +9,10 @@
         </p>
         <!--Input timer-->
         <div class="category-card text-center mt-5">
-            <label for="time">Masukkan waktu timer (menit) : </label>
+            <label for="time">Menit : </label>
             <input type="number" name="time" id="time">
-            <button class="btn btn-primary" class="setButton" >Set Timer</button>
         </div>
+        
         <!--Timer-->
         <div id="chronoExample" class="category-card text-center mt-3">
             <div class="values">00:00:00</div><br>
@@ -25,11 +25,12 @@
         </div>
 
         <!--Download-->
-        <div class="d-flex align-items-center justify-content-end">
-            <a href="{{ url('/download/' . $workouts->id) }}">
-                <img src="/assets/images/workout/detail_page/icon_download.png" alt="" width="35%" class="img2" />
-            </a>
-
+        <div class="row text-center">
+            <div class="col align-self-center">
+                <a href="{{ url('/download/' . $workouts->id) }}">
+                    <img src="/assets/images/workout/detail_page/icon_download.png" class="img2" />
+                </a>
+            </div>
         </div>
     </div>
 @endsection
