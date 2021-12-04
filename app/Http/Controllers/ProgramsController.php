@@ -20,7 +20,6 @@ class ProgramsController extends Controller
 
     public function category(ProgramCategory $category)
     {
-
         $programs = Program::where('category_id', '=', $category->id)->paginate(6);        
         $data = [
             1 => [

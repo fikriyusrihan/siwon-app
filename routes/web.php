@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\AdminFoodRecipeController;
 use App\Http\Controllers\AdminMealPlanController;
 use App\Http\Controllers\AdminProgramController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\AdminWorkoutController;
+use App\Http\Controllers\AdminFoodRecipeController;
 use App\Http\Controllers\HealthyFoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\WorkoutController;
 use Illuminate\Http\Request;
@@ -39,6 +41,8 @@ Route::get('/programs/{program}', [ProgramsController::class, 'show']);
 Route::get('/workout', [WorkoutController::class, 'index']);
 Route::get('/workout/categories/{category}', [WorkoutController::class, 'category']);
 Route::get('/workout/{workout}', [WorkoutController::class, 'show']);
+Route::get('/download/{id}', [WorkoutController::class, 'download']);
+
 
 // HealthyFoods
 Route::get('/healthy-foods', [HealthyFoodController::class, 'index']);
@@ -78,6 +82,9 @@ Route::resource('dashboard/mealplan', AdminMealPlanController::class)->middlewar
 
 // Program Page
 Route::resource('dashboard/program', AdminProgramController::class)->middleware('admin', 'auth');
+
+// Workout Page
+Route::resource('dashboard/workouts', AdminWorkoutController::class)->middleware('admin', 'auth');
 
 
 // Articles

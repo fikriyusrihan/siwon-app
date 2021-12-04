@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use Workout;
+use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,5 +36,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\ProgramCategory::create([
             'title' => 'Advanced',
         ]);
+
+        User::factory(5)->create();
     }
 }

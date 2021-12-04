@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FoodRecipe;
-use App\Models\MealPlan;
 use App\Models\Program;
-use Illuminate\Http\Request;
-use App\Models\Suggestion;
 use App\Models\Workout;
+use App\Models\MealPlan;
+use App\Models\FoodRecipe;
+use App\Models\Suggestion;
+use Illuminate\Http\Request;
+
 
 class HomeController extends Controller
 {

@@ -46,7 +46,7 @@
                         <a class="nav-link @if ($active == 'programs') active @endif" href="/programs">Programs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/workout">Workout</a>
+                        <a class="nav-link {{ Request::is('workout') ? 'active' : '' }}" href="/workout">Workout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if ($active == 'healthy_foods') active @endif" href="/healthy-foods">Healthy Foods</a>
@@ -126,9 +126,12 @@
     </div>
 
     <!-- Bootstrap JavaScript -->
+    <script src="/js/workout_timer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+
+    @yield('script')
 </body>
 
 </html>

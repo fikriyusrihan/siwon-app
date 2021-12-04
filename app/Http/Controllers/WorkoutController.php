@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Workout;
-use App\Models\WorkoutCategory;
 use Illuminate\Http\Request;
+use App\Models\WorkoutCategory;
+
 
 class WorkoutController extends Controller
 {
@@ -20,8 +21,7 @@ class WorkoutController extends Controller
 
     public function category(WorkoutCategory $category)
     {
-        
-        $workout = WorkoutCategory::find($category->id)->workout;
+        $workout = Workout::where('category_id', $category->id)->paginate(6);
         $data = [
             1 => [
                 'title' => 'Easy Workout',
@@ -43,11 +43,20 @@ class WorkoutController extends Controller
         return view('workout.category', [
             'active' => 'workout',
             'data' => $data[$category->id],
-            'workout' => $workout,
+            'workouts' => $workout,
         ]);
     }
 
     public function show(Workout $workout) {
-        dd($workout);
+        return view('workout.workoutdetail', [
+            'active' => 'workout',
+            'workouts' => $workout,
+        ]);
+    }
+
+    public function download($id) {
+        $data = Workout::where('id', $id)->first();
+        $filepath = public_path("assets/images/workout/poster/{$data->poster}");
+        return response()->download($filepath);
     }
 }

@@ -88,3 +88,16 @@ body {
 .category-card a:hover {
     color: black;
 }
+
+.img1{
+    margin-top: 40px;
+}
+
+.values{
+  font-size: 40px;
+}
+
+.img2{
+    margin-top: 30px;
+    float: right;
+}
