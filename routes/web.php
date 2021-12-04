@@ -62,7 +62,7 @@ Route::post('/auth/register', [RegisterController::class, 'store']);
 Route::get('/auth/forgot-password', [ForgotPasswordController::class, 'index'])->name('forget.password.get');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'forgot'])->name('forget.password.post');
 Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'reset_password'])->name('reset.password.get');
-Route::post('/reset-password', [ForgotPasswordController::class, 'store_new_password'])->name('reset.password.post');
+Route::post('/reset-password', [ForgotPasswordController::class, 'store'])->name('reset.password.post');
 
 // Dashboard Page
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'admin']);
