@@ -149,14 +149,14 @@
                             </div>
                         @enderror
                     </div>
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         {!! htmlFormSnippet() !!}
                         @error('g-recaptcha-response')
                             <div class="small text-danger">
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div> --}}
+                    </div>
                     <button class="btn btn-danger" type="submit">Kirim</button>
                 </form>
             </div>
