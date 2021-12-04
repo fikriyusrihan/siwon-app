@@ -11,9 +11,15 @@
                         <p>
                             Silakan masukkan email yang telah terdaftar untuk mereset password.
                         </p>
-                        <form action="" method="POST">
+                        <form action="/forgot-password" method="POST">
+                            @csrf
                             <div class="mb-3">
-                                <input type="email" class="form-control" id="field-name" placeholder="Email" />
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" />
+                                @error('email')
+                                    <div class="small text-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <a href="./login"><small>Sudah memiliki akun? Login</small></a><br>

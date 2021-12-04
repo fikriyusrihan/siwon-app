@@ -10,15 +10,17 @@ use Illuminate\Support\Facades\Mail;
 
 class ForgotPasswordController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('auth/forgot-password', [
             'active' => '',
         ]);
     }
 
-    public function forgot(Request $request) {
+    public function forgot(Request $request)
+    {
         $request->validate([
-            'email' => 'email|required',
+            'email' => 'email:dns|required|exists:users,email',
         ]);
 
         $token = Str::random(64);
@@ -29,11 +31,16 @@ class ForgotPasswordController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-        Mail::send('email.forgot_password', ['token' => $token], function($message) use ($request) {
+        Mail::send('email.forgot_password', ['token' => $token], function ($message) use ($request) {
             $message->to($request->email);
             $message->subject('Reset Password');
         });
 
         return back();
+    }
+
+    public function reset_password($token)
+    {
+        return view('auth.reset-password');
     }
 }
