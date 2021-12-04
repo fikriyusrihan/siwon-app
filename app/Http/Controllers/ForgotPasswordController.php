@@ -37,7 +37,7 @@ class ForgotPasswordController extends Controller
             $message->subject('Reset Password');
         });
 
-        return back();
+        return back()->with('forgot-message', '<div class="alert alert-success" role="alert">Silakan periksa email anda.</div>');
     }
 
     public function reset_password($token)
@@ -70,6 +70,6 @@ class ForgotPasswordController extends Controller
 
         DB::table('password_resets')->where(['email' => $request->email])->delete();
 
-        return redirect('/auth/login');
+        return redirect('/auth/login')->with('login-message', '<div class="alert alert-success" role="alert">Password berhasil direset, silakan login.</div>');
     }
 }

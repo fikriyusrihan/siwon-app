@@ -11,6 +11,9 @@
                         <p>
                             Silakan masukkan email yang telah terdaftar untuk mereset password.
                         </p>
+                        @if (session()->has('forgot-message'))
+                            {!! session('forgot-message') !!}
+                        @endif
                         <form action="/forgot-password" method="POST">
                             @csrf
                             <div class="mb-3">
