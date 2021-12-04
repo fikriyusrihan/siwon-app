@@ -5,7 +5,7 @@
     <!-- Content Baris 1-->
     <div id="main-content" class="container mb-4">
         <p class="category-card text-center mt-5">
-            <img src="/assets/images/workout/poster/{{ $workouts->poster }}" alt="" width="60%" class="img1" />
+            <img src="/assets/images/workout/poster/{{ $workouts->poster }}" alt="" width="60%" class="img1" style="background-size: cover" />
         </p>
         <!--Input timer-->
         <div class="category-card text-center mt-5">
