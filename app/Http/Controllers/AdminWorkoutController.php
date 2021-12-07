@@ -15,6 +15,8 @@ class AdminWorkoutController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * Menampilkan halaman dasboard admin untuk mengedit workout
      */
     public function index()
     {
@@ -32,6 +34,9 @@ class AdminWorkoutController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     *
+     * Menampilkan halaman admin untuk membuat workout
+     * Tampian berupa form yang akan di isi oleh admin untuk membuat workout baru
      */
     public function create()
     {
@@ -49,6 +54,8 @@ class AdminWorkoutController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
+     * Untuk meng-input isian form ke database ddengan menerapkan beberapa validasi dan juga mengarahkan/memindahkan file gambar ke dalam folder public->assets->images->workout
      */
     public function store(Request $request)
     {
@@ -94,6 +101,8 @@ class AdminWorkoutController extends Controller
      *
      * @param  \App\Models\Workout  $workout
      * @return \Illuminate\Http\Response
+     *
+     * Menampilkan  form edit workout
      */
     public function edit(Workout $workout)
     {
@@ -113,6 +122,8 @@ class AdminWorkoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Workout  $workout
      * @return \Illuminate\Http\Response
+     *
+     * Mengupdate database dengan menerapkan validasi tertentu
      */
     public function update(Request $request, Workout $workout)
     {
@@ -173,6 +184,8 @@ class AdminWorkoutController extends Controller
      *
      * @param  \App\Models\Workout  $workout
      * @return \Illuminate\Http\Response
+     *
+     * Destroy untuk menghapus workout dalam database dan juga menghapus file dalam folder public
      */
     public function destroy(Workout $workout)
     {

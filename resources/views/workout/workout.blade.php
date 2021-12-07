@@ -1,5 +1,7 @@
 @extends('layout.main')
-
+{{--
+    Halaman utama workout yang menamplkan kategori workout seperti Easy, Medium dan Hard
+--}}
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">
@@ -62,7 +64,7 @@
                                 <h4 class="mt-4">Hard</h4>
                                 <h4 class="mt-4">Advanced</h4>
                                 <p class="mt-4">
-                                  Workout sedang yang anda 
+                                  Workout sedang yang anda
                                   <br>dapat lakukan dimana saja
                                 </p>
                                 <img
