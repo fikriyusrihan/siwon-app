@@ -1,4 +1,8 @@
 @extends('layout.main')
+{{--
+    Halaman detail workout yang menampilkan poster yang diambil mdari database
+    Kemudian timer dibuat menggunakan javascript dengan menggunakan library easytimer
+--}}
 
 @section('content')
 

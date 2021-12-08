@@ -1,5 +1,7 @@
 @extends('layout.main')
-
+{{--
+    Halaman utama workout yang menamplkan kategori workout seperti Easy, Medium dan Hard
+--}}
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">

@@ -34,13 +34,81 @@
         {{-- Checklist --}}
         <div class="row mt-5 px-5">
             <h6 class="text-center">Checklists</h6>
-                @if ($program->category->id == 1)
-                    <p>hello</p>
-                @elseif ($program->category->id == 2)
-                    <p>hi</p>
-                @else
-                    <p>gatau</p>
-                @endif
-        </div>
+            @if ($program->category->id == 1)
+                <div class="menu-section row justify-content-center mt-5">
+                    <?php
+                    for ($i = 1; $i <= 7; $i += 1) {
+                        echo '
+                                <div class="col-lg-1 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option-beginner-'. $i . '">
+                                        <label class="form-check-label" for="inlineCheckbox1">Day' . $i . '</label>
+                                    </div>
+                                </div>
+                                ';
+                    }
+                    ?>
+            @elseif ($program->category->id == 2)
+                    <div class="menu-section row mt-3">
+                        <?php
+                        for ($i = 1; $i <= 30; $i += 1) {
+                            echo '
+                                <div class="col-lg-2 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option-intermediate-'. $i . '">
+                                        <label class="form-check-label" for="inlineCheckbox1">Day ' . $i . '</label>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                    </div>
+            @else
+                    <div class="menu-section row mt-3">
+                        {{-- Bulan 1 --}}
+                        <h4 class="mt-5">Bulan 1</h4>
+                        <?php
+                        for ($i = 1; $i <= 30; $i += 1) {
+                            echo '
+                                <div class="col-lg-2 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option-advanced-'. $i . '">
+                                        <label class="form-check-label" for="inlineCheckbox1">Day ' . $i . '</label>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                        {{-- Bulan 2 --}}
+                        <h4 class="mt-5">Bulan 2</h4>
+                        <?php
+                        for ($i = 31; $i <= 60; $i += 1) {
+                            echo '
+                                <div class="col-lg-2 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option-advanced-'. $i . '">
+                                        <label class="form-check-label" for="inlineCheckbox1">Day ' . $i-30 . '</label>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                        {{-- Bulan 3 --}}
+                        <h4 class="mt-5">Bulan 3</h4>
+                        <?php
+                        for ($i = 61; $i <= 90; $i += 1) {
+                            echo '
+                                <div class="col-lg-2 mt-2">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option-advanced-'. $i . '">
+                                        <label class="form-check-label" for="inlineCheckbox1">Day ' . $i-60 . '</label>
+                                    </div>
+                                </div>
+                                ';
+                        }
+                        ?>
+                    </div>
+            @endif
+    </div>
     </div>
 @endsection

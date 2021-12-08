@@ -1,5 +1,9 @@
 @extends('layout.main')
+{{--
+    Halaman yang menampilkan daftar workout yang ada sesuai dengan kategorinya. Penampilan poster dengan memanggil dari database.
 
+    Kemudian untuk pagination menggunakan {{ $workouts->links() }} untuk menampilkan pilihan paginate
+--}}
 @section('content')
     <!-- Jumbotron -->
     <div class="row mt-5">

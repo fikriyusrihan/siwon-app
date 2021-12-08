@@ -36,10 +36,15 @@ Route::get('/programs', [ProgramsController::class, 'index']);
 Route::get('/programs/categories/{category}', [ProgramsController::class, 'category']);
 Route::get('/programs/{program}', [ProgramsController::class, 'show']);
 
-// Workout
+// -------------- Workout ----------------------- //
+
+// halaman utama workout
 Route::get('/workout', [WorkoutController::class, 'index']);
+//halaman kategori workout
 Route::get('/workout/categories/{category}', [WorkoutController::class, 'category']);
+//halaman detail workout
 Route::get('/workout/{workout}', [WorkoutController::class, 'show']);
+//Rout untuk download file
 Route::get('/download/{id}', [WorkoutController::class, 'download']);
 
 

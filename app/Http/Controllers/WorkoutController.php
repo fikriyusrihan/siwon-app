@@ -6,9 +6,10 @@ use App\Models\Workout;
 use Illuminate\Http\Request;
 use App\Models\WorkoutCategory;
 
-
+//Class untuk Workout
 class WorkoutController extends Controller
 {
+    //Method untuk pemanggilan halaman utama workout
     public function index()
     {
 
@@ -19,8 +20,10 @@ class WorkoutController extends Controller
         ]);
     }
 
+    //Method untuk pemanggilan halaman kategoi
     public function category(WorkoutCategory $category)
     {
+        //paginate untuk menampilkan 6 kegiatan perhalaman
         $workout = Workout::where('category_id', $category->id)->paginate(6);
         $data = [
             1 => [
@@ -47,6 +50,7 @@ class WorkoutController extends Controller
         ]);
     }
 
+    //Method untuk pemanggilan halaman detail workout
     public function show(Workout $workout) {
         return view('workout.workoutdetail', [
             'active' => 'workout',
@@ -54,6 +58,7 @@ class WorkoutController extends Controller
         ]);
     }
 
+    //Method untuk mendownload file
     public function download($id) {
         $data = Workout::where('id', $id)->first();
         $filepath = public_path("assets/images/workout/poster/{$data->poster}");
