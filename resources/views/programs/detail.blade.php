@@ -25,9 +25,9 @@
                 </p>
             </div>
             <div class="col-lg-4 col-12 my-auto">
-                <center>
+                <a href="/programs/download/{{ $program->slug }}">
                     <img src="{{ asset('assets/images/download.png') }}" alt="" width="40%" />
-                </center>
+                </a>
             </div>
         </div>
 

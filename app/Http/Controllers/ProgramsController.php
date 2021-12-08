@@ -51,4 +51,9 @@ class ProgramsController extends Controller
             'active' => $active,
         ]);
     }
+
+    public function download(Program $program) {
+        $filepath = public_path("assets/images/program/poster/" . $program->poster);
+        return response()->download($filepath);
+    }
 }

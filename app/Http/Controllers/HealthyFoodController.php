@@ -35,4 +35,9 @@ class HealthyFoodController extends Controller
             'recipe' => $foodrecipe,
         ]);
     }
+
+    public function download(FoodRecipe $foodrecipe) {
+        $filepath = public_path("assets/images/foodrecipe/poster/" . $foodrecipe->poster);
+        return response()->download($filepath);
+    }
 }

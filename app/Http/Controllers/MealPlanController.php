@@ -23,4 +23,9 @@ class MealPlanController extends Controller
             'active' => 'healthy_foods',
         ]);
     }
+
+    public function download(Mealplan $mealplan) {
+        $filepath = public_path("assets/images/mealplan/poster/" . $mealplan->poster);
+        return response()->download($filepath);
+    }
 }
