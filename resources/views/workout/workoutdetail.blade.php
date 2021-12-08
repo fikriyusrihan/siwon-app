@@ -16,7 +16,7 @@
             <label for="time">Menit : </label>
             <input type="number" name="time" id="time">
         </div>
-        
+
         <!--Timer-->
         <div id="chronoExample" class="category-card text-center mt-3">
             <div class="values">00:00:00</div><br>
@@ -54,7 +54,6 @@
     var inputTime = document.getElementById('time');
     inputTime.onkeyup = function() {
         target_timer = inputTime.value*60 ;
-        console.log(target_timer);
     }
     $('#chronoExample .startButton').click(function () {
         timer.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: target_timer}});
@@ -69,6 +68,7 @@
 
     $('#chronoExample .resetButton').click(function () {
         timer.reset();
+        timer.stop();
     });
 
     timer.addEventListener('secondsUpdated', function (e) {
