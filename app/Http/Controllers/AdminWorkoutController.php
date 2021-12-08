@@ -44,6 +44,7 @@ class AdminWorkoutController extends Controller
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
 
         return view('dashboard.workouts.create', [
+            'active' => 'workouts',
             'messages' => $messages,
             'categories' => $categories,
         ]);
@@ -110,6 +111,7 @@ class AdminWorkoutController extends Controller
         $messages = Suggestion::all()->sortByDesc('created_at')->take(4);
 
         return view('dashboard.workouts.edit', [
+            'active' => 'workouts',
             'messages' => $messages,
             'categories' => $categories,
             'workout' => $workout,
