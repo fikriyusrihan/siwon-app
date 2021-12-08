@@ -12,6 +12,7 @@ use App\Http\Controllers\WorkoutController;
 use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MealPlanController;
 use App\Http\Controllers\SuggestionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,9 @@ Route::get('/healthy-foods', [HealthyFoodController::class, 'index']);
 // FoodRecipe
 Route::get('/food-recipes', [HealthyFoodController::class, 'foodrecipe']);
 Route::get('/food-recipe/{foodrecipe}', [HealthyFoodController::class, 'show_recipe']);
+
+Route::get('/meal-plan', [MealPlanController::class, 'index']);
+Route::get('/meal-plan/{mealplan}', [MealPlanController::class, 'detail_mealplan']);
 
 // Auth (Login)
 Route::get('/auth/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

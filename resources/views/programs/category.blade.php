@@ -34,7 +34,7 @@
                                     <div></div>
                                     <img class="mt-auto"
                                         src="{{ asset('assets/images/program/poster/' . $program->poster) }}" alt=""
-                                        width="50%" height="220px" style="background-size: cover" />
+                                        width="50%" height="220px" style="object-fit: cover" />
                                 </div>
                             </a>
                         </div>
