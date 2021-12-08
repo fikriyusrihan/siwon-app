@@ -37,6 +37,7 @@ Route::get('/programs', [ProgramsController::class, 'index']);
 Route::get('/programs/categories/{category}', [ProgramsController::class, 'category']);
 Route::get('/programs/{program}', [ProgramsController::class, 'show']);
 Route::get('/programs/download/{program}', [ProgramsController::class, 'download']);
+Route::post('/programs/check/', [ProgramsController::class, 'check']);
 
 // -------------- Workout ----------------------- //
 
