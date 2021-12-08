@@ -50,7 +50,7 @@
                                         echo '<td>' . $mysqldate . '</td>';
                                     @endphp
                                     <td>
-                                        <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-secondary" href="/workout/{{ $row->slug }}"><i class="fas fa-eye"></i></a>
                                         <form class="d-inline"
                                             action="/dashboard/foodrecipe/{{ $row->slug }}/edit" method="get">
                                             @csrf

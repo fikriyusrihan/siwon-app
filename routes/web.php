@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\AdminMealPlanController;
 use App\Http\Controllers\AdminProgramController;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\AdminWorkoutController;
 use App\Http\Controllers\AdminFoodRecipeController;
-
 use App\Http\Controllers\HealthyFoodController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -13,7 +13,9 @@ use App\Http\Controllers\ProgramsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SuggestionController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Password;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,11 +67,10 @@ Route::get('/auth/register', [RegisterController::class, 'index']);
 Route::post('/auth/register', [RegisterController::class, 'store']);
 
 // Auth (Forgot Password)
-Route::get('/auth/forgot-password', function () {
-    return view('auth/forgot-password', [
-        'active' => '',
-    ]);
-});
+Route::get('/auth/forgot-password', [ForgotPasswordController::class, 'index'])->name('forget.password.get');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'forgot'])->name('forget.password.post');
+Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'reset_password'])->name('reset.password.get');
+Route::post('/reset-password', [ForgotPasswordController::class, 'store'])->name('reset.password.post');
 
 // Dashboard Page
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'admin']);

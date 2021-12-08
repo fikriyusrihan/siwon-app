@@ -44,7 +44,7 @@
                                     <td><img img src="{{ asset('assets/images/workout/poster/' . $row->poster) }}" alt=""
                                             width="100px"></td>
                                     <td>
-                                        <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-secondary" href="/workout/{{ $row->slug }}" target="blank_"><i class="fas fa-eye"></i></a>
                                         <form class="d-inline" action="/dashboard/workouts/{{ $row->slug }}/edit"
                                             method="get">
                                             @csrf

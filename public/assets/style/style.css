@@ -89,15 +89,21 @@ body {
     color: black;
 }
 
-.img1{
+.img1 {
     margin-top: 40px;
 }
 
-.values{
-  font-size: 40px;
+.values {
+    font-size: 40px;
 }
 
-.img2{
-    margin-top: 30px;
-    float: right;
+.img2 {
+    margin-top: 64px;
+    width: 70%;
+}
+
+@media (min-width: 768px) {
+    .img2 {
+        width: 18%;
+    }
 }

@@ -5,16 +5,26 @@
     Kemudian untuk pagination menggunakan {{ $workouts->links() }} untuk menampilkan pilihan paginate
 --}}
 @section('content')
+    <!-- Jumbotron -->
+    <div class="row mt-5">
+        <div class="jumbotron py-5" style="background-image: url({{ asset('assets/images/workout/workout-background.jpg') }});">
+            <div class="container py-5">
+                <div class="col-lg-6 col-12">
+                    <div class="p-4 p-lg-5 bg-white rounded text-md-start text-sm-center">
+                        <h1 class="header">{{ $data['title'] }}</h1>
+                        <p>
+                            {{ $data['description'] }}
+                        </p>
+                        <a class="btn btn-danger" href="#main-content">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Content -->
     <div id="main-content" class="container">
         <!-- Workouts -->
         <div class="menu-section row">
-            <div class="description col-lg-6 col-sm-12 ps-4">
-                <h3 class="content-header mt-5">{{ $data['title'] }}</h3>
-                <p class="content-description">
-                    {{ $data['description'] }}
-                </p>
-            </div>
             <div class="featured-card mt-5">
                 <div class="row align-items-end">
                     @foreach ($workouts as $workout)
@@ -27,7 +37,7 @@
                                     <div></div>
                                     <img class="mt-auto"
                                         src="{{ asset('assets/images/workout/cover/' . $workout->photo) }}" alt=""
-                                        width="50%" height="220px" style="background-size: cover" />
+                                        width="50%" height="220px" style="object-fit: cover"/>
                                 </div>
                             </a>
                         </div>
